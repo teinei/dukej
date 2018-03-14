@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Software Applications</title>
+  <meta name="author" content="Owen Astrachan, Drew Hilton, Susan Rodger, Robert Duvall">
+  <link rel="icon" href="../../common/images/duke.gif" type="image/gif">
+  <link rel="shortcut icon" href="../../common/images/duke.ico">
+  <link rel="apple-touch-icon image_src" href="../../common/images/duke.png">
+  <link rel=stylesheet href="../common/css/style.css" type="text/css">
+    <!-- WhichBrowser -->
+  <script>
+    (function(){var p=[],w=window,d=document,e=f=0;p.push('ua='+encodeURIComponent(navigator.userAgent));e|=w.ActiveXObject?1:0;e|=w.opera?2:0;e|=w.chrome?4:0;
+    e|='getBoxObjectFor' in d || 'mozInnerScreenX' in w?8:0;e|=('WebKitCSSMatrix' in w||'WebKitPoint' in w||'webkitStorageInfo' in w||'webkitURL' in w)?16:0;
+    e|=(e&16&&({}.toString).toString().indexOf("\n")===-1)?32:0;p.push('e='+e);f|='sandbox' in d.createElement('iframe')?1:0;f|='WebSocket' in w?2:0;
+    f|=w.Worker?4:0;f|=w.applicationCache?8:0;f|=w.history && history.pushState?16:0;f|=d.documentElement.webkitRequestFullScreen?32:0;f|='FileReader' in w?64:0;
+    p.push('f='+f);p.push('r='+Math.random().toString(36).substring(7));p.push('w='+screen.width);p.push('h='+screen.height);var s=d.createElement('script');
+    s.src='../common/js/whichbrowser/detect.php?' + p.join('&');d.getElementsByTagName('head')[0].appendChild(s);})();
+  </script>
+</head>
+
+<body>
+
+<div class="titlebar">
+  <img src="../common/images/dukelogovert.png" id="dukeLogo"/>
+  <img src="../common/images/coursera.png" id="courseraLogo"/>
+  <h1>Documentation</h1>
+</div>
+
+<div class="navbar">
+<table width="95%" border="0" align="center">
+<tr>
+  <td align="left"><a href="../../index.php.html">Duke Resources Home</a></td>
+  <td align="center"><a href="../index.php.html">Duke Course Home</a></td>
+  <td align="right"><a href="https://www.coursera.org/learn/duke-programming-web">Coursera Course Home</a></td>
+</tr>
+</table>
+</div>
+
+<div class="content">
+<div class="section">
+
+<h3>HTML</h3>
+<div class = "lessons">
+  <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Full list of HTML elements</a>
+  </p>
+  <p>As a reminder, in most browsers you can right-click on a page and select <em>View Source</em> to see the HTML code used to render the page.</p>
+  <a name="basichtml"></a>
+  <h4>Basic HTML</h4>
+
+  <table border=2 cellspacing=5 width="98%">
+    <tr>
+      <th>Tag</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_html.asp"><code>&lt;html&gt;</code></a></td>
+      <td>All content of your webpage must go inside <code>&lt;html&gt;&lt;/html&gt;</code> tags.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_head.asp"><code>&lt;head&gt;</code></a></td>
+      <td>Contains information about the webpage.<br />
+        The title tag goes inside <code>&lt;head&gt;&lt;/head&gt;</code> tags.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_title.asp"><code>&lt;title&gt;</code></a></td>
+      <td>Title of the webpage (what appears in the window/tab of your browser). <br />
+        The text itself does not appear on webpage.</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_body.asp"><code>&lt;body&gt;</code></a></td>
+      <td>Everything that appears on the webpage should go between these tags</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_p.asp"><code>&lt;p&gt;</code></a></td>
+      <td>Defines a paragraph (text with some space on the bottom and top).</td>
+      <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code><p>This is a paragraph.</p></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_hn.asp"><code>&lt;h1&gt;</code></a></td>
+      <td>Heading tag, bold and bigger text. <br />
+        You can use any number from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> with <code>&lt;h1&gt;</code> being the largest heading and <code>&lt;h6&gt;</code> being the smallest.</td>
+      <td><code>&lt;h3&gt;larger heading&lt;/h3&gt;<br>&lt;h6&gt;smaller heading&lt;/h6&gt;</code>
+<h3>larger heading</h3>
+<h6>smaller heading</h6></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_b.asp"><code>&lt;b&gt;</code></a></td>
+      <td>Apply bold formatting to text</td>
+      <td><code>&lt;b&gt;bold&lt;/b&gt;</code><br><b>bold</b></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_em.asp"><code>&lt;em&gt;</code></a></td>
+      <td>Apply emphasis to text</td>
+      <td><code>&lt;em&gt;emphasis&lt;/em&gt;</code><br><em>emphasis</em></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_img.asp"><code>&lt;img&gt;</code></a></td>
+      <td><p>Inserts an image. </p>
+        <ul>
+          <li><code>src</code> is the link specifying the image to display (it is a required attribute)</li>
+          <li><code>width</code> (and <code>height</code>) specifies the size of the image (it is an optional attribute)</li>
+          </ul>
+        <p>Unlike most other tags, this start tag does not have a corresponding end tag.</p></td>
+      <td><code>&lt;img src=&quot;http://bit.ly/1QfkvVw&quot; width=&quot;100px&quot;&gt;</code><br>
+        <img src="http://bit.ly/1QfkvVw" width="100px"></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_a.asp"><code>&lt;a&gt;</code></a></td>
+      <td><p>Links to another webpage. </p>
+        <ul>
+          <li><code>href</code> specifies the URL of the page to link to (it is a required attribute). </li>
+          </ul>
+        <p>There <em>must</em> be some text between the start and end tags to be the anchor of the link.</p></td>
+      <td><code>&lt;a href=&quot;https://www.duke.edu/&quot;&gt;Duke University&lt;/a&gt;</code><br><a href="https://www.duke.edu/">Duke University</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/tags/tag_div.asp"><code>&lt;div&gt;</code></a></td>
+      <td>Defines a section of the web page.</td>
+      <td><code>&lt;div&gt;&lt;p&gt;This paragraph is inside a div.&lt;/p&gt;&lt;/div&gt;</code></td>
+    </tr>
+  </table>
+
+  <a name="lists"></a>
+  <h4>Lists</h4>
+  <table border=2 cellspacing=5 width="98%">
+    <tr>
+      <th>Tag</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_li.asp"><code>&lt;li&gt;</code></a></td>
+      <td>List item.<br />
+        List items can go inside unordered list, <code>&lt;ul&gt;</code>, or ordered list, <code>&lt;ol&gt;</code> tags.</td>
+      <td><code>&lt;li&gt;HTML&lt;/li&gt;</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_ul.asp"><code>&lt;ul&gt;</code></a></td>
+      <td>Unordered list, each item has a bullet point.</td>
+      <td><code>&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;HTML&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;CSS&lt;/li&gt;<br>&lt;/ul&gt;</code>
+          <ul><li>HTML</li><li>CSS</li></ul></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_ol.asp"><code>&lt;ol&gt;</code></a></td>
+      <td>Ordered list, each item has a number.</td>
+      <td><code>&lt;ol&gt;<br>&nbsp;&nbsp;&lt;li&gt;HTML&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;CSS&lt;/li&gt;<br>&lt;/ol&gt;</code>
+          <ol><li>HTML</li><li>CSS</li></ol></td>
+    </tr>
+  </table>
+
+  <a name="tables"></a>
+  <h4>Tables</h4>
+  <table border=2 cellspacing=5 width="98%">
+    <tr>
+      <th>Tag</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_table.asp"><code>&lt;table&gt;</code></a></td>
+      <td>Defines a table.<br />
+        By default a table has no borders and is only as wide as the text it contains.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_tr.asp"><code>&lt;tr&gt;</code></a></td>
+      <td>Defines a table row (only has value within <code>&lt;table&gt;</code> tag).<br />        
+        Table rows can contain either table data elements or table header cells.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_td.asp"><code>&lt;td&gt;</code></a></td>
+      <td>Table data element (standard table cell). <br />
+        Can contain many types of data including text, images, links,  lists, or even a table.</td>
+      <td><code>&lt;table&gt;<br>
+        &nbsp;&lt;tr&gt;<br>
+        &nbsp;&nbsp;&lt;td&gt;<br>
+        &nbsp;&nbsp;&nbsp;cell 1<br>
+        &nbsp;&nbsp;&lt;/td&gt;<br>
+        &nbsp;&nbsp;&lt;td&gt;<br>
+        &nbsp;&nbsp;&nbsp;cell 2<br>
+        &nbsp;&nbsp;&lt;/td&gt;<br>
+        &nbsp;&lt;/tr&gt;<br>
+        &lt;/table&gt;</code>
+      <table>
+        <tr>
+          <td>cell 1</td>
+          <td>cell 2</td>
+        </tr>
+      </table>
+    </td>
+    </tr>
+    <tr>
+      <td><a href="http://www.w3schools.com/TAGS/tag_th.asp"><code>&lt;th&gt;</code></a></td>
+      <td>Table header cell (a table cell with bold text).</td>
+      <td><code>&lt;table&gt;<br>
+        &nbsp;&lt;tr&gt;<br>
+        &nbsp;&nbsp;&lt;th&gt;<br>
+        &nbsp;&nbsp;&nbsp;heading<br>
+        &nbsp;&nbsp;&lt;/th&gt;<br>
+        &nbsp;&lt;/tr&gt;<br>
+        &nbsp;&lt;tr&gt;<br>
+        &nbsp;&nbsp;&lt;td&gt;<br>
+        &nbsp;&nbsp;&nbsp;content<br>
+        &nbsp;&nbsp;&lt;/td&gt;<br>
+        &nbsp;&lt;/tr&gt;<br>
+        &lt;/table&gt;</code>
+      <table>
+        <tr><th>heading</th></tr>
+        <tr><td>content</td></tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+
+<a name="input"></a>
+<h4>Input</h4>
+<p>Because the attributes used with input elements varies so much depending on the type of input you want to use, we have provided several specific examples of using different types of input.</p>
+<table border=2 cellspacing=5 width="98%">
+  <tr>
+    <th>Example</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><pre>
+&lt;input type = "button"
+       value = "change"
+       onclick = "alert('clicked button')"&gt;
+    </pre>
+    </td>
+    <td>
+      <ul>
+        <li><code>type</code> is button</li>
+        <li><code>value</code> is text that appears on button</li>
+        <li><code>onclick</code> is event handler, specifies to call alert function when button is clicked</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><pre>
+&lt;input type = "color"
+       value = "#001A57"
+       id = "clr"
+       onchange = "docolor()"&gt;</pre>
+    </td>
+    <td>
+      <ul>
+        <li><code>type</code> is color picker</li>
+        <li><code>value</code> is default color value</li>
+        <li><code>id</code> lets us refer to input element in JavaScript</li>
+        <li><code>onchange</code> is event handler, specifies to call docolor function when color is changed</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><pre>
+&lt;input type = "range"
+       min = "10"
+       max = "100"
+       value = "10"
+       id = "sldr"
+       oninput = "dosquare()"&gt;
+    </pre>
+    </td>
+    <td>
+      <ul>
+        <li><code>type</code> is slider</li>
+        <li><code>min</code> is minimum value, <code>max</code> is maximum value</li>
+        <li><code>value</code> is default value</li>
+        <li><code>id</code> lets us refer to input element in JavaScript</li>
+        <li><code>oninput</code> is event handler, specifies to call dosquare function when slider is changed</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><pre>
+&lt;input type = "text"
+       id = "finput"&gt;
+    </pre>
+    </td>
+    <td>
+      <ul>
+        <li><code>type</code> is text</li>
+        <li><code>id</code> lets us refer to input element in JavaScript</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><pre>
+&lt;input type = "file"
+       multiple = "false"
+       accept = "image/*"
+       id = "finput"
+       onchange = "upload()"&gt;
+    </pre>
+    </td>
+    <td>
+      <ul>
+        <li><code>type</code> is file</li>
+        <li><code>multiple = "false"</code> indicates user cannot select multiple files</li>
+        <li><code>accept = "image/*"</code> indicates user can only select image files</li>
+        <li><code>value</code> is default value</li>
+        <li><code>id</code> lets us refer to input element in JavaScript</li>
+        <li><code>onchange</code> is event handler, specifies to call upload function when input changes</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<h3>CSS</h3>
+<div class="lessons">
+
+<p>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Full list of CSS properties</a><br>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Tools/ColorPicker_Tool">Mozilla color picker tool</a>
+</p>
+<p><a href="http://www.csszengarden.com/">This website</a> challenges people to use CSS to make as many different stylized versions as possible using the same HTML code.</p>
+<a name="css"></a>
+<h4>Common CSS Properties and Values</h4>
+
+  <table border=2 cellspacing=5 width="98%">
+    <tr>
+      <th>Property</th>
+      <th>Example Values</th>
+      <th>Use with</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_text_color.asp">color</a></code></td>
+      <td>blue<br>rgb(0,0,255)<br>#0000FF</td>
+      <td>text: paragraphs, links, list elements, table cells, headings</td>
+      <td><pre>h1 {
+    color: rgb(0,0,255);
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_font_font-size.asp">font-size</a></code></td>
+      <td>12pt<br>16px<br>100%</td>
+      <td>text</td>
+      <td><pre>p {
+    font-size: 14pt;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_text_text-align.asp">text-align</a></code></td>
+      <td>left<br>right<br>center<br>justify</td>
+      <td>text</td>
+      <td><pre>td {
+    text-align: center;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_background-color.asp">background-color</a></code></td>
+      <td>blue<br>rgb(0,0,255)<br>#0000FF</td>
+      <td>table, table cell, page backgrounds</td>
+      <td><pre>body {
+    background-color: #00FF00;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_pos_vertical-align.asp">vertical-align</a></code></td>
+      <td>top<br>middle<br>bottom</td>
+      <td>table cells</td>
+      <td><pre>th {
+    vertical-align: top;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_class_float.asp">float</a></code></td>
+      <td>left<br>right</td>
+      <td>images</td>
+      <td><pre>img {
+    float: right;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a></code></td>
+      <td>100px</td>
+      <td>tables, table cells, images</td>
+      <td><pre>img {
+    width: 80px;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_dim_height.asp">height</a></code></td>
+      <td>100px</td>
+      <td>tables, table cells, images</td>
+      <td><pre>td {
+    height: 10px;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_border-width.asp">border-width</a></code></td>
+      <td>5px</td>
+      <td>tables, table cells, images</td>
+      <td><pre>table {
+    border-width: 2px;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_border-style.asp">border-style</a></code></td>
+      <td>solid<br>dotted<br>dashed</td>
+      <td>tables, table cells, images</td>
+      <td><pre>table {
+    border-style: solid;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_border-color.asp">border-color</a></code></td>
+      <td>blue<br>rgb(0,0,255)<br>#0000FF</td>
+      <td>tables, table cells, images</td>
+      <td><pre>table {
+    border-color: red;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_border.asp">border</a></code></td>
+      <td>5px<br>10px dotted<br>5px dashed green</td>
+      <td>tables, table cells, images</td>
+      <td><pre>table {
+    border: 2px solid red;
+}</pre></td>
+    </tr>
+    <tr>
+      <td><code><a href="http://www.w3schools.com/cssref/pr_border-collapse.asp">border-collapse</a></code></td>
+      <td>collapse</td>
+      <td>table</td>
+      <td><pre>table {
+    border-collapse: collapse;
+}</pre></td>
+    </tr>
+  </table>
+</div>
+
+<h3>Course Specific JavaScript Functions</h3>
+<div class="lessons">
+
+<a name="simplepixel"></a>
+<h4>SimplePixel</h4>
+
+<p>
+For these examples, assume
+    <ul>
+      <li><code>pix1</code> is a pixel at coordinate (100, 200) representing the color Duke blue, with RGBA values of (0, 26, 87, 255)
+          <img src="duke_blue.png" width="20" height="10">
+      </li>
+      <li><code>pix2</code> is a pixel at coordinate (300, 400) representing the color white, with RGBA values of (255, 255, 255, 255)
+          <img src="white.png" width="20" height="10">
+      </li>
+    </ul>
+
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Function name</th>
+  <th>Description</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>getX()</code></td>
+  <td>returns the pixel's x-coordinate within the image</td>
+  <td><code>pix1.getX()</code> is 100</td>
+</tr>
+<tr>
+  <td><code>getY()</code></td>
+  <td>returns the pixel's y-coordinate within the image</td>
+  <td><code>pix1.getY()</code> is 200</td>
+</tr>
+<tr>
+  <td><code>getRed()</code></td>
+  <td>returns the value of the pixel's red component (always in the range 0-255)</td>
+  <td><code>pix1.getRed()</code> is 0</td>
+</tr>
+<tr>
+  <td><code>getGreen()</code></td>
+  <td>returns the value of the pixel's green component (always in the range 0-255)</td>
+  <td><code>pix1.getGreen()</code> is 26</td>    
+</tr>
+<tr>
+  <td><code>getBlue()</code></td>
+  <td>returns the value of the pixel's blue component (always in the range 0-255)</td>
+  <td><code>pix1.getBlue()</code> is 87</td>
+</tr>
+<tr>
+  <td><code>getAlpha()</code></td>
+  <td>returns the value of the pixel's alpha, or transparency, component (always in the range 0-255)</td>
+  <td><code>pix1.getAlpha()</code> is 255</td>
+</tr>
+<tr>
+  <td><code>setRed(newR)</code></td>
+  <td>changes the value of the pixel's red component to <code>newR</code> (if <code>newR</code> is not in the range of 0-255 it is changed to be in that range)</td>
+  <td><code>pix1.setRed(255)</code> changes the color to (255, 26, 87, 255)
+      <img src="cherry.png" width="20" height="10">
+  </td>
+</tr>
+<tr>
+  <td><code>setGreen(newG)</code></td>
+  <td>changes the value of the pixel's green component  to <code>newG</code> (if <code>newG</code> is not in the range of 0-255 it is changed to be in that range)</td>
+  <td><code>pix1.setGreen(255)</code> changes the color to (0, 255, 87, 255)
+      <img src="lime_green.png" width="20" height="10">
+  </td>
+</tr>
+<tr>
+  <td><code>setBlue(newB)</code></td>
+  <td>changes the value of the pixel's blue component to <code>newB</code> (if <code>newB</code> is not in the range of 0-255 it is changed to be in that range)</td>
+  <td><code>pix1.setBlue(255)</code> changes the color to (0, 26, 255, 255)
+      <img src="bright_blue.png" width="20" height="10">
+  </td>
+</tr>
+<tr>
+  <td><code>setAlpha(newA)</code></td>
+  <td>changes the value of the pixel's alpha, or transparency, component to <code>newA</code> (if <code>newA</code> is not in the range of 0-255 it is changed to be in that range)</td>
+  <td><code>pix1.setAlpha(100)</code> changes the color to (0, 26, 87, 100)
+      <img src="duke_alpha.png" width="20" height="10">
+  </td>
+</tr>
+<tr>
+  <td><code>setAllFrom(otherPixel)</code></td>
+  <td>changes the value of all of the pixel's components (its red, green, blue, and alpha) to match <code>otherPixel</code>'s values</td>
+  <td><code>pix2.setAllFrom(pix1)</code> changes the color of pix2 to (0, 26, 87, 255)
+      <img src="duke_blue.png" width="20" height="10">
+  </td>
+</tr>
+</table>
+
+<a name="simpleimage"></a>
+<h4>SimpleImage</h4>
+<p>
+For these examples, assume the variable <code>logo</code> has the value of the image &quot;devil.png&quot; below. It is 100 pixels wide and 85 pixels tall.</p>
+<p> <img src="duke_blue_devil.png" alt="Duke Blue Devil" width="100" height="85"></p>
+
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Function name</th>
+  <th>Description</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>new SimpleImage(filename)</code></td>
+  <td>creates a <code>SimpleImage</code> to represent the image in <code>filename</code></td>
+  <td><code>new SimpleImage(&quot;devil.png&quot;)</code> is<br />
+      <img src="duke_blue_devil.png" width="100" height="85">
+  </td>
+</tr>
+<tr>
+  <td><code>new SimpleImage(width, height)</code></td>
+  <td>creates a <code>SimpleImage</code> whose dimensions are <code>width</code> by <code>height</code>. 
+      All the pixels in this image are black (0, 0, 0, 255)</td>
+  <td>
+    <code>new SimpleImage(100, 100)</code> is<br />
+    <img src="black.png" width="100" height="100">
+  </td>
+</tr>
+<tr>
+  <td><code>new SimpleImage(fileInputElement)</code></td>
+  <td>creates a <code>SimpleImage</code> to represent the image selected by the user using the
+<code>fileInputElement</code> given from the web page</td>
+  <td><code>var input = document.getElementById("fileLoader");<br>
+var img = new SimpleImage(input);</code> is<br />
+      <img src="duke_blue_devil.png" width="100" height="85"><br />
+      assuming the user selected that image from their computer.
+  </td>
+</tr>
+<tr>
+  <td><code>getWidth()</code></td>
+  <td>returns the image's width, or number of pixels in the X direction</td>
+  <td><code>logo.getWidth()</code> is 100</td>
+</tr>
+<tr>
+  <td><code>getHeight()</code></td>
+  <td>returns the image's height, or number of pixels in the Y direction</td>
+  <td><code>logo.getHeight()</code> is 85</td>
+</tr>
+<tr>
+  <td><code>getPixel(x,y)</code></td>
+  <td>returns the pixel in this image at the coordinate (<code>x</code>, <code>y</code>)</td>
+  <td><code>logo.getPixel(0, 0)</code> is the pixel (255, 255, 255, 255)
+      <img src="white.png" width="20" height="10">
+  </td>
+</tr>
+<tr>
+  <td><code>setPixel(x,y,pixel)</code></td>
+  <td>copies the RGBA values from the given pixel into pixel at the (x,y) coordinates given</td>
+  <td><code>logo.setPixel(50, 42, pix2)</code> changes the color to white
+      <img src="white.png" width="20" height="10">
+  </td>
+</tr>
+<tr>
+  <td><code>setSize(width, height)</code></td>
+  <td>resizes the image to be <code>width</code> by <code>height</code>. The image is scaled to fit into the new dimensions.</td>
+  <td><code>logo.setSize(300, 85)</code> is<br />
+    <img src="duke_blue_devil.png" width="300" height="43">
+  </td>
+</tr>
+<tr>
+  <td><code>values()</code></td>
+  <td>returns all the pixels in the image, starting in the upper-left corner and moving down to the lower-right corner, providing a way to access each pixel in turn</td>
+  <td>
+    <pre>for (var pixel of logo.values()) {<br>
+// modify pixel<br>
+}</pre>
+  </td>
+</tr>
+<tr>
+  <td><code>drawTo(canvas)</code></td>
+  <td>draws the image to canvas, for drawing images on web pages</td>
+  <td><code>var canvas = document.getElementById("canvas");<br>
+    logo.drawTo(canvas);</code></td>
+</tr>
+</table>
+
+<a name="printing"></a>
+<h4>Printing</h4>
+<table border=2 cellspacing=5 width="98%">
+  <tr>
+    <th>Function name</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>print(something)</code></td>
+    <td>displays <code>something</code> in the main &quot;See It&quot; area of the page</td>
+    <td><code>print(image)</code> shows the image</td>
+  </tr>
+  <tr>
+    <td><code>debug(something)</code></td>
+    <td>displays <code>something</code> in the small area at the bottom of the &quot;See It&quot; area of the page</td>
+    <td><code>debug(x)</code> shows the value of the variable <code>x</code></td>
+  </tr>
+</table>
+</div>
+
+
+<h3>Standard JavaScript</h3>
+<div class="lessons">
+
+<a name="arithmetic"></a>
+<h4>Arithmetic Operations</h4>
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Operator</th>
+  <th>Description</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>+</code></td>
+  <td>addition</td>
+  <td><code>4 + 5</code> is 9</td> 
+</tr>
+<tr>
+  <td><code>-</code></td>
+  <td>subtraction</td>
+  <td><code>9 - 5</code> is 4</td>
+</tr>
+<tr>
+  <td><code>*</code></td>
+  <td>multiplication</td>
+  <td><code>3 * 5</code> is 15</td> 
+</tr>
+<tr>
+  <td><code>/</code></td>
+  <td>division</td>
+  <td><code>6 / 3</code> is 2<br />
+      <code>6 / 4</code> is 1.5</td>
+</tr>
+<tr>
+  <td><code>%</code></td>
+  <td>mod/remainder</td>
+  <td><code>5 % 3</code> is 2</td>
+</tr>
+</table>
+
+<a name="comparing"></a>
+<h4>Comparing Two Numbers</h4>
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Operator</th>
+  <th>Description</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>==</code></td>
+  <td>is equal to</td>
+  <td><code>3 == 3</code> is true</td>
+</tr>
+<tr>
+  <td><code>!=</code></td>
+  <td>is not equal to</td>
+  <td><code>3 != 3</code> is false</td>
+</tr>
+<tr>
+  <td><code>&gt;=</code></td>
+  <td>is greater than or equal to</td>
+  <td><code>4 &gt;= 3</code> is true</td>
+</tr>
+<tr>
+  <td><code>&lt;=</code></td>
+  <td>is less than or equal to</td>
+  <td><code>4 &lt;= 3</code> is false</td>
+</tr>
+<tr>
+  <td><code>&gt;</code></td>
+  <td>is strictly greater than</td>
+  <td><code>4 &gt; 3</code> is true</td>
+</tr>
+<tr>
+  <td><code>&lt;</code></td>
+  <td>is strictly less than</td>
+  <td><code>3 &lt; 3</code> is false</td>
+</tr>
+</table>
+
+<a name="combining_comparisons"></a>
+<h4>Combining Comparisons - Logic Operators</h4>
+
+<p>For these examples, assume the variable <code>x</code> has the value 5.
+
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Operator</th>
+  <th>Description</th>
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>||</code></td>
+  <td>returns true if at least one part of the comparison is true </td>
+  <td><code>(x &lt; 3 || x &gt; 7)</code> is false<br />
+      <code>(x &lt; 3 || x &lt; 7)</code> is true </td>
+</tr>
+<tr>
+  <td><code>&&</code></td>
+  <td>returns true only if both parts of the comparison are true </td>
+  <td><code>(x &gt; 3 &amp;&amp; x &lt; 7)</code> is true<br />
+      <code>(x &gt; 3 &amp;&amp; x &gt; 7)</code> is false </td>
+</tr>
+  <td><code>!</code></td>
+  <td>reverses the boolean value of a comparison</td>
+  <td><code>(! x == 5)</code> is false</td>
+</tr>
+</table>
+
+<a name="math"></a>
+<h4>Math Functions</h4>
+<table border=2 cellspacing=5 width="98%">
+  <tr>
+    <th>Function name</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+<tr>
+  <td><code>abs(x)</code></td>
+  <td>returns absolute value of <code>x</code></td>
+  <td><code>Math.abs(-3.6)</code> is 3.6 <br />
+      <code>Math.abs(3.2)</code> is 3.2 </td>
+</tr>
+<tr>
+  <td><code>ceil(x)</code></td>
+  <td>returns <code>x</code>, rounded upwards to the nearest integer</td>
+  <td><code>Math.ceil(3.6)</code> is 4<br />
+      <code>Math.ceil(3.2)</code> is 4 </td>
+</tr>
+<tr>
+  <td><code>floor(x)</code></td>
+  <td>returns <code>x</code>, rounded downwards to the nearest integer</td>
+  <td><code>Math.floor(3.6)</code> is 3<br />
+      <code>Math.floor(3.2)</code> is 3</td>
+  <tr>
+</tr>
+<tr>
+  <td><code>round(x)</code></td>
+  <td>returns <code>x</code>, rounded x to the nearest integer</td>
+  <td><code>Math.round(3.6)</code> is 4<br />
+      <code>Math.round(3.2)</code> is 3</td>
+  <tr>
+</tr>
+</table>
+
+<a name="random"></a>
+<h4>Random Functions</h4>
+<table border=2 cellspacing=5 width="98%">
+  <tr>
+    <th>Function name</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+   <td><code>random()</code></td>
+   <td>returns a random number between 0 and 1</td>
+   <td><code>Math.random()</code> might return 0.523<br />
+       <code>Math.random()</code> might return 0.983
+   </td>
+  </tr>
+</table>
+</div>
+
+
+<h3>Background Information</h3>
+<div class="lessons">
+
+<a name="pixel"></a>
+<h4>What is a Pixel?</h4>
+<p> Digital images are made of pixels. A <em>pixel</em> is a small point of colored light. When you look at a computer monitor, the image you see is actually made of a grid of these tiny dots of light. They are so small and so close together that it looks like one continuous picture. To get an idea of how small a pixel is, the monitor that I happen to be using as I write this has a <em>resolution</em> of 1440 x 900 (read as &quot;1440 by 900&quot;). That means that there are 1,440 pixels across the top and 900 pixels down one side, for a total of almost 1.3 million pixels.</p>
+<p>This is what pixels might look like if they were magnified. This is an example of a 5x4 image because it is 5 pixels wide and 4 pixels tall.</p>
+<p><img src="pixels.png" alt="" width="147" height="108" align="middle"></p>
+<p>Each pixel has a color value. We need a way to represent colors so that we can tell the computer which color to make each pixel. There are many color representations, but JavaScript uses a scheme called the <em>RGBA color model</em>. Basically, it means that a color is represented by four numbers:</p>
+<img src="colors.png" alt="" width="219" height="215" align="right">
+<ul>
+  <li>R (the amount of red light)</li>
+  <li>G (the amount of green light)</li>
+  <li>B (the amount of blue light) and</li>
+  <li>A (called &quot;alpha&quot;, this number tells how transparent the color should be)</li>
+</ul>
+<p>So each color is represented by these four numbers (&quot;Everything's a number&quot;, remember?). Moreover,<strong> each of these number slots must have a value between 0 and 255</strong>. You may be wondering whether or not only 256 possibilities for each slot is enough to make all the many colors that we might want. If you have 256 possibilities for each of the R, G, and B values, (ignoring the transparency number for now) then the total number of colors available is over 16 million! It is estimated that the human eye can only detect 10 million different colors, so there's no worry that you won't be able to make any color you want.</p>
+<p> Since the computer uses light to make a picture, the RGBA model is an <em>additive color model</em>. This means that the more the medium is added, the closer the color gets to white. Contrast this with using paint as a medium. That is a <em>subtractive color model</em> because the more paint you add, the further you get from white. So it should come as no surprise then that a color with R, G, and B values all 0 is black (no light) and a color with R, G, B values all 255 is white (pure light). Think of these numbers as knobs that you can turn up or down. If you turn on the red and blue lights and leave off the green light, you have shades of purple (R = 150, G = 0, B = 150, for example). The more you turn up the light, the higher the number goes and the brighter the color gets. How will you know what values to use for R, G, and B to make the color you want? If you search for &quot;RGB color chart&quot; on the Internet you will find lots of sites with palettes of colors and their corresponding values.</p>
+<a name="transparency"></a>
+<h4>Transparency: Alpha Channel</h4>
+<table>
+  <tr>
+    <td><img src="alpha.png" alt="" width="293" height="142"></td>
+    <td> The last value, called alpha, is also a number whose value must be between 0 and 255. This time the value of the number does not change the color's hue, but rather the transparency of the color. If a pixel has an alpha value of 0, it is completely transparent, or invisible. If it has a value of 255, it is completely opaque. Using this transparency value allows you to have layers of color on the screen, or shapes that can be partially seen through other shapes. </td>
+  </tr>
+</table>
+<a name="coordinates"></a>
+<h4>Image Coordinate System</h4>
+<p>Finally, it is important to be able to distinguish one pixel from another. We do this by referring to each pixel's location on the screen or image. Each pixel gets an <em>X and Y value</em>, where (0,0) is the top left corner of the screen. (This can take some getting used to as it's not the way a Cartesian Plane is drawn in math class!)</p>
+<p>The X value refers to how far right the pixel is, and the Y value refers to how far down the pixel is. For my computer monitor, which is 1440 x 900, the top left corner is (0,0), the top right is (1439,0), the bottom left is (0,899), the bottom right is (1439,899), and the middle is (720, 450).</p>
+<p><img src="coordinates.png" alt="" width="414" height="276"  align="middle"></p>
+<p>All of the discussion so far has been generic knowledge of a computer representation of images and colors. In other words, the same information would probably apply if you were programming in a language other than JavaScript. The rest of this page gives you details that are specific to JavaScript and the problems you are asked to solve.</p>
+</div>
+</div>
+
+<div class="toc">
+<p>HTML</p>
+<ul>
+  <li><a href="index.php.html#basichtml">Basic HTML</a></li>
+  <li><a href="index.php.html#lists">Lists</a></li>
+  <li><a href="index.php.html#tables">Tables</a></li>
+  <li><a href="index.php.html#input">Input</a></li>
+</ul>
+<p>CSS</p>
+<ul>
+  <li><a href="index.php.html#css">CSS Properties and Values</a></li>
+</ul>
+<p>Course Specific Functions</p>
+  <ul>
+    <li><a href="index.php.html#simplepixel">SimplePixel</a></li>
+    <li><a href="index.php.html#simpleimage">SimpleImage</a></li>
+    <li><a href="index.php.html#printing">Printing</a></li>
+</ul>
+<p>Standard JavaScript</p>
+  <ul>
+    <li><a href="index.php.html#arithmetic">Arithmetic Operations</a></li>
+    <li><a href="index.php.html#comparing">Comparing Two Numbers</a></li>
+    <li><a href="index.php.html#combining_comparisons">Combining Comparisons</a></li>
+    <li><a href="index.php.html#math">Math Functions</a></li>
+    <li><a href="index.php.html#random">Random Functions</a></li>
+  </ul>
+<p>Background Information</p>
+  <ul>
+    <li><a href="index.php.html#pixel">What is a Pixel?</a></li>
+    <li><a href="index.php.html#transparency">Transparency: Alpha Channel</a></li>
+    <li><a href="index.php.html#coordinates">Image Coordinate System</a></li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer">
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/4.0/88x31.png" /></a><br />
+Material accessible from this webpage developed by the instructors at Duke University is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</p>
+
+<!-- Apache license 
+<a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html"><img alt="Apache License" style="border-width:0" src="http://www.apache.org/img/asf_logo.png" width="120" height="31"></a><br />The code for this work is licensed under a <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License Version 2.0</a>.
+-->
+</div>
+
+<!-- WhichBrowser -->
+<script>
+function waitForWhichBrowser(cb) {
+    var callback = cb;
+    function wait() {
+        if (typeof WhichBrowser == 'undefined') 
+            window.setTimeout(wait, 100)
+        else 
+            callback();
+    }
+    wait();
+}
+waitForWhichBrowser(function() {
+    var o = document.createElement('div');
+	o.id = 'warning';
+    try {
+        Browsers = new WhichBrowser({ useFeatures: true, detectCamouflage: true });
+        if (Browsers.isBrowser('Safari', '>', '0')) {
+            o.innerHTML = 'Unfortunately, some features of our JavaScript programming environment are not compatible with the browser you are using. This <a href="../common/saving.php">link</a> explains an alernate way to save your work.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+        else if (Browsers.isBrowser('Internet Explorer', '>', '0') || Browsers.isBrowser('Edge', '>', '0')) {
+            o.innerHTML = 'Unfortunately, our JavaScript programming environment is not compatible with any version of Microsoft\'s Internet Explorer/Edge browser. We suggest you use the latest version of either <a href="https://www.mozilla.org/download">Firefox</a> or <a href="https://www.google.com/chrome/browser/index.html">Chrome</a> instead.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+		else if (! Boolean(document.createElement('canvas').getContext)) {
+			o.innerHTML = 'Unfortunately, you are using an older version of your browser that is not compatible with our JavaScript programming environment. We suggest you download and install the latest version of your of these browser before continuing.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+		}
+    } catch (e) {
+        console.log('WhichBrowser error: ' + e);
+    }
+});
+</script>
+
+<!-- Google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66891748-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

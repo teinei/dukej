@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Software Applications</title>
+  <meta name="author" content="Owen Astrachan, Drew Hilton, Susan Rodger, Robert Duvall">
+  <link rel="icon" href="../../common/images/duke.gif" type="image/gif">
+  <link rel="shortcut icon" href="../../common/images/duke.ico">
+  <link rel="apple-touch-icon image_src" href="../../common/images/duke.png">
+  <link rel=stylesheet href="../../common/css/style.css" type="text/css">
+    <!-- Nicks CS 101 stuff -->
+  <script type="text/javascript" src="http://www.dukelearntoprogram.com/common/js/cs101/cs101.js"></script>
+  <script type="text/javascript" src="http://www.dukelearntoprogram.com/common/js/cs101/SimpleImage.js"></script>
+  <!-- Ace code editor -->
+  <script type="text/javascript" src="http://www.dukelearntoprogram.com/common/js/ace/ace.js"></script>
+    <!-- WhichBrowser -->
+  <script>
+    (function(){var p=[],w=window,d=document,e=f=0;p.push('ua='+encodeURIComponent(navigator.userAgent));e|=w.ActiveXObject?1:0;e|=w.opera?2:0;e|=w.chrome?4:0;
+    e|='getBoxObjectFor' in d || 'mozInnerScreenX' in w?8:0;e|=('WebKitCSSMatrix' in w||'WebKitPoint' in w||'webkitStorageInfo' in w||'webkitURL' in w)?16:0;
+    e|=(e&16&&({}.toString).toString().indexOf("\n")===-1)?32:0;p.push('e='+e);f|='sandbox' in d.createElement('iframe')?1:0;f|='WebSocket' in w?2:0;
+    f|=w.Worker?4:0;f|=w.applicationCache?8:0;f|=w.history && history.pushState?16:0;f|=d.documentElement.webkitRequestFullScreen?32:0;f|='FileReader' in w?64:0;
+    p.push('f='+f);p.push('r='+Math.random().toString(36).substring(7));p.push('w='+screen.width);p.push('h='+screen.height);var s=d.createElement('script');
+    s.src='../common/js/whichbrowser/detect.php?' + p.join('&');d.getElementsByTagName('head')[0].appendChild(s);})();
+  </script>
+</head>
+
+<body onLoad="loadTools()">
+
+<div class="titlebar">
+  <img src="../../common/images/dukelogovert.png" id="dukeLogo"/>
+  <img src="../../common/images/coursera.png" id="courseraLogo"/>
+  <h1>Green Screen</h1>
+</div>
+
+<div class="navbar">
+<table width="95%" border="0" align="center">
+<tr>
+  <td align="left"><a href="../../index.php.html">Duke Resources Home</a></td>
+  <td align="center"><a href="../index.php.html">Duke Course Home</a></td>
+  <td align="right"><a href="https://www.coursera.org/learn/duke-programming-web">Coursera Course Home</a></td>
+</tr>
+</table>
+</div>
+
+<div class="content">
+<div class="runparent">
+<h3>Solve It</h3>
+
+<div id="problem">
+<!-- Problem description -->
+<p>For this problem, you will implement the green screen 
+(also known as &quot;chromakey&quot;) algorithm.
+As you have learned, this problem involves taking a foreground
+image taken in front of a green screen and combining it with a background image. We will replace
+all green pixels in the foreground image with the corresponding
+pixel from the background image. We begin by making an output image the same size as the foreground. Then we copy pixels from the foreground into the new image, unless they are green. A green pixel does not get copied, but  the corresponding background pixel gets copied instead.</p>
+<p>We have provided a picture of Drew and Robert with a flat
+  green background for you to use as a foreground image,
+  as well as a picture of dinosaurs in outer space to use
+  as a background image.  Of course, you can also use
+  your own images.  Use your own background to put
+  Drew and Robert somewhere fun and creative!  Or,
+  if you have an image with a flat green background,
+  use your own foreground image too. Just make sure the background image is at least as large as the foreground.</p>
+
+
+</div>
+</div>
+
+
+<div class="runparent">
+<div class="runcode-left">
+<h3>Code It</h3>
+<div id="resizable">
+<!-- Example starter code if any -->
+<div id="editor">//Start with the foreground image you want (fgImage)
+var fgImage = new SimpleImage("drewRobert.png");
+//... and with the background image you want (bgImage)
+var bgImage = new SimpleImage("dinos.png");
+//Make a blank image of the same size (output)
+var output  = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
+
+//write code for each of these steps:
+//For each pixel (currentPixel) in fgImage 
+for (var pixel of fgImage.values()) {
+    //Look at currentPixel and if it is green, 
+    if (pixel.getGreen() > pixel.getRed() + pixel.getBlue()) {
+        //Look at same position in bgImage
+        var x = pixel.getX();
+        var y = pixel.getY();
+        var bgPixel = bgImage.getPixel(x, y);
+        //and set output's corresponding pixel to bgImage's pixel
+        output.setPixel(x, y, bgPixel);
+    }
+    //Otherwise: set output's corresponding pixel to currentPixel
+    else {
+        output.setPixel(pixel.getX(), pixel.getY(), pixel);
+    }    
+}
+//show our answer!
+print(output);
+</div>
+<div class="action-outer">
+    <button class="action" onClick="evaluateInput(globalEditor.getValue())">Run Code</button>
+    <div class="ioHolder">
+        <button class="action2" onClick="download(globalEditor.getValue(), 'myCode.txt', 'text/plain')">[Save Code To Your Computer]</button>
+        <button class="action2" onClick="upload()">[Load Code From Your Computer]</button>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Output area -->
+<div class="runcode-right">
+<h3>See It</h3>
+<div id="editor-output" class="runout"></div>
+<div id="debug-output" class="debugout">&nbsp;</div>
+<div class="ioHolder">
+    <button class="action2" onClick="download('', 'myImage.png', 'image/png')">[Save Image To Your Computer]</button>
+    <button id="toggle" class="action2" onClick="toggleImageView()">[See Image Fit to Window]</button>
+</div>
+</div>
+</div>
+<!-- stop being floaty -->
+<div style="clear: both; height: 0;">&nbsp;</div>
+
+
+<div class="runparent">
+<h3>Available Images</h3>
+
+<div id="preview-row" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+<!-- Images to start with -->
+<div id="list"><img class="thumb" title="dinos.png " src="http://www.dukelearntoprogram.com/course1/dinos.png"><br>dinos.png<br>[480x270]</div><div id="list"><img class="thumb" title="drewRobert.png " src="http://www.dukelearntoprogram.com/course1/drewRobert.png"><br>drewRobert.png<br>[480x270]</div>
+</div>
+<p>
+Drop your images onto the area above to make it available within your code editor on this page.  
+Note: your images will <strong>not</strong> be uploaded anywhere, they will stay on your computer.
+</p>
+</div>
+</div>
+
+
+<div class="footer">
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/4.0/88x31.png" /></a><br />
+Material accessible from this webpage developed by the instructors at Duke University is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</p>
+
+<!-- Apache license 
+<a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html"><img alt="Apache License" style="border-width:0" src="http://www.apache.org/img/asf_logo.png" width="120" height="31"></a><br />The code for this work is licensed under a <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License Version 2.0</a>.
+-->
+</div>
+
+<!-- WhichBrowser -->
+<script>
+function waitForWhichBrowser(cb) {
+    var callback = cb;
+    function wait() {
+        if (typeof WhichBrowser == 'undefined') 
+            window.setTimeout(wait, 100)
+        else 
+            callback();
+    }
+    wait();
+}
+waitForWhichBrowser(function() {
+    var o = document.createElement('div');
+	o.id = 'warning';
+    try {
+        Browsers = new WhichBrowser({ useFeatures: true, detectCamouflage: true });
+        if (Browsers.isBrowser('Safari', '>', '0')) {
+            o.innerHTML = 'Unfortunately, some features of our JavaScript programming environment are not compatible with the browser you are using. This <a href="../common/saving.php">link</a> explains an alernate way to save your work.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+        else if (Browsers.isBrowser('Internet Explorer', '>', '0') || Browsers.isBrowser('Edge', '>', '0')) {
+            o.innerHTML = 'Unfortunately, our JavaScript programming environment is not compatible with any version of Microsoft\'s Internet Explorer/Edge browser. We suggest you use the latest version of either <a href="https://www.mozilla.org/download">Firefox</a> or <a href="https://www.google.com/chrome/browser/index.html">Chrome</a> instead.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+		else if (! Boolean(document.createElement('canvas').getContext)) {
+			o.innerHTML = 'Unfortunately, you are using an older version of your browser that is not compatible with our JavaScript programming environment. We suggest you download and install the latest version of your of these browser before continuing.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+		}
+    } catch (e) {
+        console.log('WhichBrowser error: ' + e);
+    }
+});
+</script>
+
+<!-- Google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66891748-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

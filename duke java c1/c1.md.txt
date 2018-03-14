@@ -1,0 +1,78 @@
+Duke Java C1 Programming Foundations with JavaScript, HTML and CSS
+===
+week 1
+===
+
+# Week 1 Welcome
+## Welcome
+Course Overview<br>
+A Student's Perspective on Learning Programming<br>
+Resources to Help You Succeed<br>
+Tips for Learning Programming<br>
+Using Forums: How to Ask for Help E×ectively<br>
+
+## Designing a Web Page with HTML and CSS
+Building a Web Page with HTML<br>
+Using CodePen<br>
+What Is HTML?<br>
+Metadata and Sectioning Elements<br>
+Formatting Text and Nesting Tags<br>
+Adding Images and Links<br>
+Images and Storage<br>
+Lists and Tables<br>
+
+## Styling a Web Page with CSS
+How CSS Is Used to Design Web Pages<br>
+CSS Basics<br>
+Colors and Names in CSS<br>
+
+# week 2 Algorithms and Programming Concepts
+## Computational Thinking
+Introduction<br>
+Everything Is a Number<br>
+How Is That a Number?<br>
+Developing an Algorithm<br>
+A Seven Step Approach to Solving Programming Problems<br>
+
+## Programming Fundamentals with JavaScript
+Variables<br>
+Methods<br>
+Functions<br>
+Types<br>
+DukeLearnToProgram Environment<br>
+For Loops<br>
+Conditional Execution<br>
+## Implementing the Green Screen Algorithm
+Translating to Code<br>
+Thinking Critically about Your Program<br>
+Finding Bugs in Code<br>
+
+# Week 3 JavaScript for Web Pages
+## Event-Driven Programming
+Introduction<br>
+Buttons with Divs<br>
+Changing Pages Interactively<br>
+Using HTML5 Canvas<br>
+Inputs and Events<br>
+## Green Screen Web Page
+Upload and Display an Image<br>
+Convert Image to Grayscale<br>
+Moving to CodePen<br>
+
+# Week 4 MiniProject: Image Filters on the Web
+## Image Filters on the Web
+Introduction<br>
+<br><br>
+*Optional Honors Content*
+## Hiding Data in Images with Steganography
+Steganography Part I<br>
+Steganography Part II<br>
+Steganography Part III<br>
+Steganography Coding Example<br>
+
+
+
+
+
+
+

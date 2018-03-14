@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Software Applications</title>
+  <meta name="author" content="Owen Astrachan, Drew Hilton, Susan Rodger, Robert Duvall">
+  <link rel="icon" href="../../common/images/duke.gif" type="image/gif">
+  <link rel="shortcut icon" href="../../common/images/duke.ico">
+  <link rel="apple-touch-icon image_src" href="../../common/images/duke.png">
+  <link rel=stylesheet href="../common/css/style.css" type="text/css">
+    <!-- Nicks CS 101 stuff -->
+  <script type="text/javascript" src="../common/js/cs101/cs101.js"></script>
+  <script type="text/javascript" src="../common/js/cs101/SimpleImage.js"></script>
+  <!-- Ace code editor -->
+  <script type="text/javascript" src="../common/js/ace/ace.js"></script>
+    <!-- WhichBrowser -->
+  <script>
+    (function(){var p=[],w=window,d=document,e=f=0;p.push('ua='+encodeURIComponent(navigator.userAgent));e|=w.ActiveXObject?1:0;e|=w.opera?2:0;e|=w.chrome?4:0;
+    e|='getBoxObjectFor' in d || 'mozInnerScreenX' in w?8:0;e|=('WebKitCSSMatrix' in w||'WebKitPoint' in w||'webkitStorageInfo' in w||'webkitURL' in w)?16:0;
+    e|=(e&16&&({}.toString).toString().indexOf("\n")===-1)?32:0;p.push('e='+e);f|='sandbox' in d.createElement('iframe')?1:0;f|='WebSocket' in w?2:0;
+    f|=w.Worker?4:0;f|=w.applicationCache?8:0;f|=w.history && history.pushState?16:0;f|=d.documentElement.webkitRequestFullScreen?32:0;f|='FileReader' in w?64:0;
+    p.push('f='+f);p.push('r='+Math.random().toString(36).substring(7));p.push('w='+screen.width);p.push('h='+screen.height);var s=d.createElement('script');
+    s.src='../common/js/whichbrowser/detect.php?' + p.join('&');d.getElementsByTagName('head')[0].appendChild(s);})();
+  </script>
+</head>
+
+<body onLoad="loadTools()">
+
+<div class="titlebar">
+  <img src="../common/images/dukelogovert.png" id="dukeLogo"/>
+  <img src="../common/images/coursera.png" id="courseraLogo"/>
+  <h1>Write Your Own</h1>
+</div>
+
+<div class="navbar">
+<table width="95%" border="0" align="center">
+<tr>
+  <td align="left"><a href="../../index.php.html">Duke Resources Home</a></td>
+  <td align="center"><a href="../index.php.html">Duke Course Home</a></td>
+  <td align="right"><a href="https://www.coursera.org/learn/duke-programming-web">Coursera Course Home</a></td>
+</tr>
+</table>
+</div>
+
+<div class="content">
+<div class="runparent">
+<h3>Solve It</h3>
+
+<div id="problem">
+<!-- Problem description -->
+<p>
+This page is for you to write JavaScript code for your own projects.
+</p>
+</div>
+</div>
+
+
+<div class="runparent">
+<div class="runcode-left">
+<h3>Code It</h3>
+<div id="resizable">
+<!-- Example starter code if any -->
+<div id="editor">// write your code here
+</div>
+<div class="action-outer">
+    <button class="action" onClick="evaluateInput(globalEditor.getValue())">Run Code</button>
+    <div class="ioHolder">
+        <button class="action2" onClick="download(globalEditor.getValue(), 'myCode.txt', 'text/plain')">[Save Code To Your Computer]</button>
+        <button class="action2" onClick="upload()">[Load Code From Your Computer]</button>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Output area -->
+<div class="runcode-right">
+<h3>See It</h3>
+<div id="editor-output" class="runout"></div>
+<div id="debug-output" class="debugout">&nbsp;</div>
+<div class="ioHolder">
+    <button class="action2" onClick="download('', 'myImage.png', 'image/png')">[Save Image To Your Computer]</button>
+    <button id="toggle" class="action2" onClick="toggleImageView()">[See Image Fit to Window]</button>
+</div>
+</div>
+</div>
+<!-- stop being floaty -->
+<div style="clear: both; height: 0;">&nbsp;</div>
+
+
+<div class="runparent">
+<h3>Available Images</h3>
+
+<div id="preview-row" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+<!-- Images to start with -->
+<div id="list"><img class="thumb" title="chapel.png " src="chapel.png"><br>chapel.png<br>[231x308]</div><div id="list"><img class="thumb" title="dinos.png " src="dinos.png"><br>dinos.png<br>[1920x1080]</div><div id="list"><img class="thumb" title="drewRobert.png " src="drewRobert.png"><br>drewRobert.png<br>[1920x1080]</div><div id="list"><img class="thumb" title="drewRobertDinos.png " src="drewRobertDinos.png"><br>drewRobertDinos.png<br>[1922x1090]</div><div id="list"><img class="thumb" title="drewRobertOrig.png " src="drewRobertOrig.png"><br>drewRobertOrig.png<br>[1928x1090]</div><div id="list"><img class="thumb" title="drewgreen.png " src="drewgreen.png"><br>drewgreen.png<br>[510x1006]</div><div id="list"><img class="thumb" title="duke_blue_devil.png " src="duke_blue_devil.png"><br>duke_blue_devil.png<br>[397x337]</div><div id="list"><img class="thumb" title="palm-and-beach.png " src="palm-and-beach.png"><br>palm-and-beach.png<br>[960x640]</div><div id="list"><img class="thumb" title="rodger.png " src="rodger.png"><br>rodger.png<br>[315x424]</div><div id="list"><img class="thumb" title="smallhands.png " src="smallhands.png"><br>smallhands.png<br>[320x226]</div><div id="list"><img class="thumb" title="smallpanda.png " src="smallpanda.png"><br>smallpanda.png<br>[270x201]</div><div id="list"><img class="thumb" title="astrachan.jpg " src="astrachan.jpg"><br>astrachan.jpg<br>[240x360]</div><div id="list"><img class="thumb" title="duvall.jpg " src="duvall.jpg"><br>duvall.jpg<br>[200x300]</div><div id="list"><img class="thumb" title="eastereggs.jpg " src="eastereggs.jpg"><br>eastereggs.jpg<br>[615x410]</div><div id="list"><img class="thumb" title="hilton.jpg " src="hilton.jpg"><br>hilton.jpg<br>[140x210]</div><div id="list"><img class="thumb" title="hippieflower.jpg " src="hippieflower.jpg"><br>hippieflower.jpg<br>[5616x3744]</div><div id="list"><img class="thumb" title="lion.jpg " src="lion.jpg"><br>lion.jpg<br>[1280x960]</div><div id="list"><img class="thumb" title="nyc-skyline.jpg " src="nyc-skyline.jpg"><br>nyc-skyline.jpg<br>[1280x853]</div><div id="list"><img class="thumb" title="pixabayhands.jpg " src="pixabayhands.jpg"><br>pixabayhands.jpg<br>[1280x905]</div><div id="list"><img class="thumb" title="skyline.jpg " src="skyline.jpg"><br>skyline.jpg<br>[300x300]</div><div id="list"><img class="thumb" title="smalllion.jpg " src="smalllion.jpg"><br>smalllion.jpg<br>[250x188]</div><div id="list"><img class="thumb" title="smalluniverse.jpg " src="smalluniverse.jpg"><br>smalluniverse.jpg<br>[256x200]</div><div id="list"><img class="thumb" title="universe.jpg " src="universe.jpg"><br>universe.jpg<br>[1280x1000]</div><div id="list"><img class="thumb" title="usain.jpg " src="usain.jpg"><br>usain.jpg<br>[300x300]</div>
+</div>
+<p>
+Drop your images onto the area above to make it available within your code editor on this page.  
+Note: your images will <strong>not</strong> be uploaded anywhere, they will stay on your computer.
+</p>
+</div>
+</div>
+
+
+<div class="footer">
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/4.0/88x31.png" /></a><br />
+Material accessible from this webpage developed by the instructors at Duke University is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</p>
+
+<!-- Apache license 
+<a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html"><img alt="Apache License" style="border-width:0" src="http://www.apache.org/img/asf_logo.png" width="120" height="31"></a><br />The code for this work is licensed under a <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License Version 2.0</a>.
+-->
+</div>
+
+<!-- WhichBrowser -->
+<script>
+function waitForWhichBrowser(cb) {
+    var callback = cb;
+    function wait() {
+        if (typeof WhichBrowser == 'undefined') 
+            window.setTimeout(wait, 100)
+        else 
+            callback();
+    }
+    wait();
+}
+waitForWhichBrowser(function() {
+    var o = document.createElement('div');
+	o.id = 'warning';
+    try {
+        Browsers = new WhichBrowser({ useFeatures: true, detectCamouflage: true });
+        if (Browsers.isBrowser('Safari', '>', '0')) {
+            o.innerHTML = 'Unfortunately, some features of our JavaScript programming environment are not compatible with the browser you are using. This <a href="../common/saving.php">link</a> explains an alernate way to save your work.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+        else if (Browsers.isBrowser('Internet Explorer', '>', '0') || Browsers.isBrowser('Edge', '>', '0')) {
+            o.innerHTML = 'Unfortunately, our JavaScript programming environment is not compatible with any version of Microsoft\'s Internet Explorer/Edge browser. We suggest you use the latest version of either <a href="https://www.mozilla.org/download">Firefox</a> or <a href="https://www.google.com/chrome/browser/index.html">Chrome</a> instead.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+		else if (! Boolean(document.createElement('canvas').getContext)) {
+			o.innerHTML = 'Unfortunately, you are using an older version of your browser that is not compatible with our JavaScript programming environment. We suggest you download and install the latest version of your of these browser before continuing.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+		}
+    } catch (e) {
+        console.log('WhichBrowser error: ' + e);
+    }
+});
+</script>
+
+<!-- Google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66891748-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

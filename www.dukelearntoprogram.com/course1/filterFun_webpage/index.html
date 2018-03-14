@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Filter fun basic</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    <script src="../common/js/image/SimpleImage.js" >
+</script>
+
+<h1>Filter Fun</h1>
+
+<canvas id="theCanvas">
+</canvas>
+
+<h2>Load Image</h2>
+
+<input type="file" multiple="false" accept="image/*" id="fileInput" onchange="loadImage()" >
+
+<h2>Choose Filter</h2>
+
+<p>
+<input type="button" value="Grayscale" onclick="doGray()" >
+<input type="button" value="Red" onclick="doRed()" >
+</p>
+
+<p>
+<input type="button" value="Reset Image" onclick="reset()" >
+</p>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+  </body>
+</html>

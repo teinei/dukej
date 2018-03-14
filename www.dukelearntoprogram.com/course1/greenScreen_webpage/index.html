@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Green Screen web page</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    <script src="../common/js/image/SimpleImage.js" >
+</script>
+
+<h1>Green Screen Web Page</h1>
+
+<canvas id = "fgcan">
+</canvas>
+<canvas id = "bgcan">
+</canvas>
+
+<p>
+Foreground: <input type="file" multiple="false" accept="image/*" id="fgfile" onchange="loadForegroundImage()" >
+</p>
+
+<p>
+Background: <input type="file" multiple="false" accept="image/*" id="bgfile" onchange="loadBackgroundImage()" >
+</p>
+
+<p>
+<input type="button" value="Create Composite" onclick="doGreenScreen()" >
+<input type="button" value="Clear Canvases" onclick="clearCanvas()" >
+</p>
+<br>
+<br>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+  </body>
+</html>

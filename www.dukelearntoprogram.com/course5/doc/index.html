@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Software Applications</title>
+  <meta name="author" content="Owen Astrachan, Drew Hilton, Susan Rodger, Robert Duvall">
+  <link rel="icon" href="../../common/images/duke.gif" type="image/gif">
+  <link rel="shortcut icon" href="../../common/images/duke.ico">
+  <link rel="apple-touch-icon image_src" href="../../common/images/duke.png">
+  <link rel=stylesheet href="../../common/css/style.css" type="text/css">
+</head>
+
+<body>
+
+<div class="titlebar">
+  <img src="../../common/images/dukelogovert.png" id="dukeLogo"/>
+  <img src="../../common/images/coursera.png" id="courseraLogo"/>
+  <h1>Java Documentation Overview</h1>
+</div>
+
+<div class="navbar">
+<table width="95%" border="0" align="center">
+<tr>
+  <td align="left"><a href="../../index.php.html">Duke Resources Home</a></td>
+  <td align="center"><a href="../index.php.html">Duke Course Home</a></td>
+  <td align="right"><a href="https://www.coursera.org/learn/java-programming-recommender">Coursera Course Home</a></td>
+</tr>
+</table>
+</div>
+
+<div class="content">
+<div class="section">
+
+<h3>Course Specific Classes</h3>
+<div class="lessons">
+
+<p>The methods included in these tables  are the ones used in this course, and the most commonly useful methods of each class. Links  are provided to the complete documentation  if you are interested.</p>
+<p><a name="fileresource"></a>
+</p>
+<h4><a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/FileResource.html" target="_blank">FileResource</a></h4>
+<p>This class provides methods for accessing a file on your computer. You can create a <code>FileResource</code> in a variety of ways:</p>
+<ul>
+  <li><code>new FileResource()</code>, opens a dialog box prompting you to select a file on your computer</li>
+  <li><code>new FileResource(&quot;path/to/file.ext&quot;)</code>, uses the given <code>String</code> to find a file on your computer or within your BlueJ project</li>
+  <li><code>new FileResource(existingFile)</code>, uses the given <code>File</code> (typically returned by using a <code>DirectoryResource</code>)</li>
+</ul>
+<p>For these examples, assume the variable <code>fr</code> has been created for a specific file.</p>
+<table width="98%" border="2" cellspacing="5">
+  <tr>
+    <th>Method name</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/FileResource.html#lines--" target="_blank">lines</a>()</code></td>
+    <td>returns an <code>Iterable</code> that  provides access to the contents of this opened file one line at a time</td>
+    <td><pre>for (String line : fr.lines()) {
+    // process each line in turn
+}</pre></td>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/FileResource.html#words--" target="_blank">words</a>()</code></td>
+    <td>returns an <code>Iterable</code> that provides access to the contents of this opened file one word at a time</td>
+    <td><pre>for (String word : fr.words()) {
+    // process each word in turn
+}</pre></td>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/FileResource.html#asString--" target="_blank">asString</a>()</code></td>
+    <td>returns the entire contents of this opened file as one String</td>
+    <td><pre>String contents = fr.asString();</pre></td>
+  </tr>
+</table>
+
+<a name="urlresource"></a>
+<h4><a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/URLResource.html" target="_blank">URLResource</a></h4>
+<p>This class provides methods for accessing a web page. You can create a <code>URLResource</code> by giving it a complete URL, or web address (note, it <em>must</em> start with either <code>http://</code> or <code>https://</code>):</p>
+<ul>
+  <li><code>new URLResource(&quot;http://www.something.com/file.ext&quot;)</code>, uses the given address to download the referenced file</li>
+  <li><code>new URLResource(&quot;https://www.something.com/file.ext&quot;)</code>, uses the given address to download the referenced file</li>
+</ul>
+<p>For these examples, assume the variable <code>ur</code> has been created for a specific URL.</p>
+<table width="98%" border="2" cellspacing="5">
+  <tr>
+    <th>Method name</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/URLResource.html#lines--" target="_blank">lines</a>()</code></td>
+    <td>returns an <code>Iterable</code> that provides access to the contents of this opened web page one line at a time</td>
+    <td><pre>for (String line : ur.lines()) {
+    // process each line in turn
+}</pre></td>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/URLResource.html#words--" target="_blank">words</a>()</code></td>
+    <td>returns an <code>Iterable</code> that provides access to the contents of this opened web page one word at a time</td>
+    <td><pre>for (String word : ur.words()) {
+    // process each word in turn
+}</pre></td>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/URLResource.html#asString--" target="_blank">asString</a>()</code></td>
+    <td>returns the entire contents of this opened web page as one String</td>
+    <td><pre>String contents = ur.asString();</pre></td>
+  </tr>
+</table>
+
+<a name="directoryresource"></a>
+<h4><a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/DirectoryResource.html" target="_blank">DirectoryResource</a></h4>
+<p>This class provides a method for choosing one or more files on your computer. You can only create a <code>DirectoryResource</code> with no parameters:</p>
+<ul>
+  <li><code>new DirectoryResource()</code></li>
+</ul>
+<p>For these examples, assume the variable <code>dr</code> has been created.</p>
+<table width="98%" border="2" cellspacing="5">
+  <tr>
+    <th>Method name</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/edu/duke/DirectoryResource.html#selectedFiles--" target="_blank">selectedFiles</a>()</code></td>
+    <td>returns an <code>Iterable</code> that provides access to each of the files selected by the user one at a time</td>
+    <td><pre>for (File f : dr.selectedFiles()) {
+    // process each file in turn
+}</pre></td>
+  </tr>
+</table>
+</div>
+
+<h3>Apache Commons CSV Classes</h3>
+<div class="lessons">
+  <p>The methods included in these tables  are the ones used in this course, and the most commonly useful methods of each class. Links  are provided to the complete documentation  if you are interested.</p>
+  <p><a name="csvrecord" id="csvrecord"></a></p>
+  <h4><a href="http://www.dukelearntoprogram.com/course5/javadoc/org/apache/commons/csv/CSVRecord.html" target="_blank">CSVRecord</a></h4>
+  <p>This class provides methods for accessing individual data values in a line of data within <a href="index.html#csv">a CSV formatted file</a>. You cannot create a <code>CSVRecord</code> directly, instead it will be provided for you when you iterate using a <code>CSVParser</code>. Data values are always returned as a <code>String</code>, so you will need to convert any values you plan to use in your calculations to <a href="index.html#converting">the appropriate numeric value</a>.</p>
+  <p>For these examples, assume the variable <code>rec</code> has been created for the second row of data below (the first line represents the header row that names the columns of data).</p>
+  <blockquote>
+    <pre>Name,Food,Color,Number
+Fred,Pizza,Purple,13</pre>
+  </blockquote>
+  <table width="98%" border="2" cellspacing="5">
+    <tr>
+      <th>Method name</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/org/apache/commons/csv/CSVRecord.html#get-java.lang.String-" target="_blank">get</a>(columnName)</code></td>
+      <td>returns a <code>String</code>, the data in this record corresponding to the column with the given <code>columnName<br />
+      </code>it is an error if the columnName does not exist in the header row (or does not have the same case) </td>
+      <td><code>rec.get(&quot;Name&quot;)</code> is &quot;Fred&quot;<br />
+        <code>rec.get(&quot;Food&quot;)</code> is &quot;Pizza&quot;</td>
+    </tr>
+    <tr>
+      <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/org/apache/commons/csv/CSVRecord.html#get-int-" target="_blank">get</a>(columnIndex)</code></td>
+      <td>returns a <code>String</code>, the data in this record corresponding to the column at the given <code>columnIndex<br />
+      </code>note, the index of the first data value is 0</td>
+      <td><code>rec.get(0)</code> is &quot;Fred&quot;<br />
+        <code>rec.get(3)</code> is &quot;13&quot;</td>
+    </tr>
+    <tr>
+      <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/org/apache/commons/csv/CSVRecord.html#size--" target="_blank">size</a>()</code></td>
+      <td>returns the number of values in this record<code></code></td>
+      <td><code>rec.size()</code> is 4</td>
+    </tr>
+  </table>
+  <p><a name="csvparser" id="csvparser"></a></p>
+  <h4><a href="http://www.dukelearntoprogram.com/course5/javadoc/org/apache/commons/csv/CSVParser.html" target="_blank">CSVParser</a></h4>
+  <p>This class provides you the ability to iterate over each line of data within a CSV formatted file as a record of the individual data values. Most likely you will not call any  methods directly on a <code>CSVParser</code> object, but use it as an <code>Iterable</code> within your loop (you do not even have to call a method to do so, just use the object itself). In any case, here is one possibly useful method.</p>
+  <table width="98%" border="2" cellspacing="5">
+    <tr>
+      <th>Method name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><code>.<a href="http://www.dukelearntoprogram.com/course5/javadoc/org/apache/commons/csv/CSVParser.html#getCurrentLineNumber--" target="_blank">getCurrentLineNumber</a>()</code></td>
+      <td>returns the line number of the current record in the iteration</td>
+    </tr>
+  </table>
+</div>
+
+<h3>Standard Java Classes</h3>
+<div class="lessons">
+
+<p>The methods included in these tables  are the ones used in this course, and the most commonly useful methods of each class. Links  are provided to the complete documentation  if you are interested.</p>
+
+<p><a name="string"></a></p>
+<h4><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html" target="_blank">String</a></h4>
+<p>This class provides methods for  accessing a sequence of characters of any length. Strings are immutable, which means they cannot be changed after they are created. There are two general ways of creating a String:</p>
+<ul>
+  <li><code>String s = new String(&quot;Colorful&quot;);</code></li>
+  <li><code>String s = &quot;Colorful&quot;;</code></li>
+</ul>
+<p>For these examples, assume the variable <code>s</code> has the value <code>"Colorful"</code></p>
+
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Method Name
+  <th>Description
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#equals-java.lang.Object-" target="_blank">equals</a>(other)</code></td>
+  <td>returns true only if this string has the same characters and in the same order as the other string</td>
+  <td><code>s.equals("Colorful")</code> is true<br />
+      <code>s.equals("colorful")</code> is false
+  </td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#equalsIgnoreCase-java.lang.String-" target="_blank">equalsIgnoreCase</a>(other)</code></td>
+  <td>returns true only if this string has the same characters and in the same order as the other string, regardless of case</td>
+  <td><code>s.equalsIgnoreCase("Colorluf")</code> is false<br />
+      <code>s.equalsIgnoreCase("colorful")</code> is true
+  </td>
+</tr>
+<tr>
+<td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--" target="_blank">length</a>()</code></td>
+<td>returns  number of characters in this string</td>
+<td><code>s.length() is 8</code> <br />
+    <code>&quot;&quot;.length()</code> is 0
+</td>
+</tr>
+<tr>
+<td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#indexOf-java.lang.String-" target="_blank">indexOf</a>(str)</code></td>
+<td> returns the index within this string of the first occurrence of the given string <br />
+  note, indices returned start at 0, the first character in the string, and go to <code>s.length()-1</code>, the last character<br />
+note, returns -1 if the given string is not in this string</td>
+<td><code>s.indexOf(&quot;l&quot;)</code> is 2<br />
+    <code>s.indexOf(&quot;ful&quot;)</code> is 5
+</td>
+<tr>
+<td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#indexOf-java.lang.String-int-" target="_blank">indexOf</a>(str, startIndex)</code></td>
+<td>returns the index within this string of the first occurrence of the given string, starting at <code>startIndex</code><br />
+note,  indices returned start at 0, the first character in the string, and go to <code>s.length()-1</code>, the last character<br />
+note, returns -1 if the given string is not in this string
+</td>
+<td><code>s.indexOf(&quot;l&quot;, 3)</code> is 7<br />
+    <code>s.indexOf(&quot;o&quot;, 1)</code> is 1
+</td>
+</tr>
+<tr>
+<td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-" target="_blank">substring</a>(startIndex)</code></td>
+<td> returns a string with the characters of this string, starting from <code>startIndex</code> and going to the end of this string<br />
+  note,  indices given start at 0, the first character in the string, and go to <code>s.length()-1</code>, the last character</td>
+<td><code>s.substring(1)</code> is &quot;olorful&quot;<br />
+    <code>s.substring(5)</code> is &quot;ful&quot;
+</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-" target="_blank">substring</a>(startIndex, endIndex)</code></td>
+  <td>returns a string with the characters of this string, starting from <code>startIndex</code> and going up to, but not including, the character at <code>endIndex</code><br />
+note, indices given start at 0, the first character in the string, and go to <code>s.length()-1</code>, the last character</td>
+  <td><code>s.substring(1, 2)</code> is &quot;o&quot;<br />
+      <code>s.substring(1, 4)</code> is &quot;olo&quot; </td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--" target="_blank">toLowerCase</a>()</code></td>
+  <td>returns a string with the same characters as this string, but  with all letters lowercased</td>
+  <td><code>s.toLowerCase()</code> is &quot;colorful&quot;</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--" target="_blank">toUpperCase</a>()</code></td>
+  <td>returns a string with the same characters as this string, but  with all letters uppercased</td>
+  <td><code>s.toUpperCase()</code> is &quot;COLORFUL&quot;</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#startsWith-java.lang.String-" target="_blank">startsWith</a>(prefix)</code></td>
+  <td>returns true only if this string starts with given prefix</td>
+  <td><code>s.startswith("Color")</code> is true<br />
+      <code>s.startswith("cool")</code> is false </td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#endsWith-java.lang.String-" target="_blank">endsWith</a>(suffix)</code></td>
+  <td>returns true only if this string ends with given suffix</td>
+  <td><code>s.endswith("ful")</code> is true<br />
+      <code>s.endswith("fool")</code> is false </td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-" target="_blank">split</a>(String regex)</code></td>
+  <td>returns an array of substrings of the original string<br />
+    any string matching the given regular expression counts as a separator<br />
+    note, the answer array does not include the separators</td>
+  <td><p><code>String[] output = s.split(&quot;o&quot;);<br />
+  </code><code>output </code>is now [&quot;C&quot;, &quot;l&quot;, &quot;rful&quot;]</p></td>
+</tr>
+</table>
+
+<p><a name="stringbuilder"></a></p>
+<h4><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html" target="_blank">StringBuilder</a></h4>
+<p>Strings are sequences of characters that cannot be changed once they are created. StringBuilder, on the other hand, allows adding and deleting from the sequence dynamically. Just like Strings, each character in the sequence has an index number starting at 0. There are two general ways of creating a new StringBuilder:</p>
+<ul>
+  <li><code>new StringBuilder()</code>, creates a StringBuilder with no characters in it.</li>
+  <li><code>new StringBuilder(&quot;Colorful&quot;)</code>, creates a StringBuilder initialized with the given characters.</li>
+</ul>
+<p>For these examples, assume the variable <code>sb</code> is a StringBuilder with the value <code>&quot;Colorful&quot;</code></p>
+
+<table border=2 cellspacing=5 width="98%">
+<tr>
+  <th>Method Name
+  <th>Description
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#append-char-" target="_blank">append</a>(char c)</code></td>
+  <td>adds the given character to the end of the sequence</td>
+  <td><code>sb.append('X');<br />
+sb </code>now has the sequence &quot;ColorfulX&quot;</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#insert-int-char-" target="_blank">insert</a>(int offset, char c)</code></td>
+  <td>inserts the given character at the specified index in the sequence<br />
+    remember that indexing of letters starts at 0</td>
+  <td><code>sb.insert(1,'X');<br />
+  sb </code>now has the sequence &quot;CXolorful&quot;</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#charAt-int-" target="_blank">charAt</a>(int index)</code></td>
+  <td>returns the character at the specified index in the sequence</td>
+  <td><code>sb.charAt(0) </code>is 'C'</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#setCharAt-int-char-" target="_blank">setCharAt</a>(int index, char c)</code></td>
+  <td>replaces the character at the specified index in the sequence with the given character</td>
+  <td><code>sb.setCharAt(1,'X'); <br />
+    sb </code>now has the sequence &quot;CXlorful&quot;</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#toString--" target="_blank">toString</a>()</code></td>
+  <td>returns a String version of the sequence</td>
+  <td><code>sb.toString()</code> is &quot;Colorful&quot;</td>
+</tr>
+</table>
+</div>
+
+<h3>Standard Java Collections</h3>
+<div class="lessons">
+<p><a name="array" id="array"></a></p>
+<h4><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="_blank">Array</a></h4>
+<p>The array is the most basic Java collection. As such, it has limitations in that it has a fixed size and few methods. All elements of an array must have the same type. Like Strings, elements in an array are numbered beginning at 0, and these numbers are referred to as indices.</p>
+<p>There are two ways to create an array:</p>
+<ul>
+  <li><code>String[] words = new String[4]</code>; creates an array that can hold Strings with exactly 4 slots. The index of the first slot is 0, and the index of last slot is 3. When arrays are created in this way, the array is filled with default values for each slot. If this were an array of numbers, that would mean that every slot would be initialized with the value 0. Since this is an array of objects, it means that every slot is initialized with a null value.<br />
+    <br />
+  </li>
+  <li><code>String[] words = {&quot;this&quot;, &quot;is&quot;, &quot;an&quot;, &quot;array&quot;};</code>creates an array of 4 Strings as well. The difference is that the slots are initialized with the given words.</li>
+</ul>
+<p>For these examples, assume the variable<code> words </code>is an array initialized as in the second line.</p>
+<table border="2" cellspacing="5" width="98%">
+  <tr>
+    <th>Method Name </th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>.length</code></td>
+    <td>returns the number of slots in the array<br />
+      note there are no parentheses after the word length (since it  is   an instance variable, not a method)</td>
+    <td><code>words.length</code> is 4</td>
+  </tr>
+  <tr>
+    <td><code>[]</code></td>
+    <td>gives access to the element in the array at the given index<br />
+      remember that indices start at 0 and end at length-1</td>
+    <td><code>words[0]</code> is &quot;this&quot;<br />      <code>words[1] = &quot;was&quot;;<br />
+      </code><code>words</code>  is now <code>[&quot;this&quot;, &quot;was&quot;, &quot;an&quot;, &quot;array&quot;]</code></td>
+  </tr>
+</table>
+
+<p><a name="arraylist"></a></p>
+<h4><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="_blank">ArrayList</a></h4>
+<p>Like arrays, <code>ArrayList</code>s are collections. Unlike arrays, they have more functionality and their size can change. When you create an <code>ArrayList</code> you declare what kind of object it holds using <code>&lt; &gt;</code> notation.</p>
+<ul>
+  <li><code>ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;()</code>; creates an empty collection</li>
+  </ul>
+<p>For these examples, assume the variable <code>list </code>is an <code>ArrayList</code> of <code>String</code>s and has the words &quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;list&quot; inserted.</p>
+<table border=2 cellspacing=5 width="98%">
+  <tr>
+  <th>Method Name
+  <th>Description
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#add-E-" target="_blank">add</a>(object)</code></td>
+  <td>adds the given object to the end of the collection</td>
+  <td><code>list.add(&quot;yes&quot;);<br />
+    list</code> is now <code>[&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;list&quot;, &quot;yes&quot;]</code><code>    </code></td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#get-int-" target="_blank">get</a>(int index)</code></td>
+  <td>returns the object at the given index<br />
+    remember that indexing starts at 0</td>
+  <td><code>list.get(0) </code>is &quot;this&quot;</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#set-int-E-" target="_blank">set</a>(int index, object)</code></td>
+  <td>changes the element at the given index to the given object<br />
+    remember that indexing starts at 0</td>
+  <td><code>list.set(1, &quot;was&quot;);<br />
+    list</code> is now <code>[&quot;this&quot;, &quot;was&quot;, &quot;a&quot;, &quot;list&quot;]</code></td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#contains-java.lang.Object-" target="_blank">contains</a>(object)</code></td>
+  <td>returns whether or not the list has the given object in it</td>
+  <td><code>list.contains(&quot;this&quot;) </code>is true</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#indexOf-java.lang.Object-" target="_blank">indexOf</a>(object)</code></td>
+  <td>returns the index of the given object or -1 if the object is not in the list</td>
+  <td><code>list.indexOf(&quot;this&quot;) </code>is 0</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#size--" target="_blank">size</a>()</code></td>
+  <td>returns the number of elements in the list</td>
+  <td><code>list.size() </code>is 4</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#clear--" target="_blank">clear</a>()</code></td>
+  <td>removes all the elements of the list</td>
+  <td><code>list.clear();<br />
+    list</code> is now empty with a <code>.size()</code> of 0    </td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#remove-int-" target="_blank">remove</a>(int index)</code></td>
+  <td>removes the element at the given index<br />
+    note that the indices of elements past index get shifted down</td>
+  <td><code>list.remove(1);<br />
+  </code><code>list</code> is now <code>[&quot;this&quot;, &quot;a&quot;, &quot;list&quot;]</code></td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#remove-java.lang.Object-" target="_blank">remove</a>(object)</code></td>
+  <td>removes the given element from the list, if it is present</td>
+  <td><code>list.remove(&quot;is&quot;);<br />
+    list</code> is now <code>[&quot;this&quot;, &quot;a&quot;, &quot;list&quot;]</code></td>
+</tr>
+<tr>
+  <td><code>Iterable</code></td>
+  <td> a list is <code>Iterable</code>, allowing access to each item one at a time</td>
+  <td><pre>for (String s : list) {
+    // process each item in turn 
+} </pre></td>
+</tr>
+
+</table>
+
+<p><a name="hashset" id="hashset"></a></p>
+<h4><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html" target="_blank">HashSet</a></h4>
+<p>A set is a collection that is not intended to have any duplications. Like <code>ArrayList</code>s, the <code>&lt;&gt;</code> notation tells the type of object being stored.</p>
+<ul>
+  <li><code>HashSet&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();</code>  creates an empty collection</li>
+</ul>
+<p>For the following examples, assume the set has the values 101, 202, and 303 in it.</p>
+<table border="2" cellspacing="5" width="98%">
+  <tr>
+    <th>Method Name </th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#add-E-" target="_blank">add</a>(object)</code></td>
+    <td>adds the element to the set, but only if it is not already present</td>
+    <td><code>set.add(404);<br />
+      set.add(101);<br />
+set</code> is now <code>[101, 202, 303, 404]</code><code>      </code></td>
+  </tr>
+  <tr>
+    <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#contains-java.lang.Object-" target="_blank">contains</a>(object)</code></td>
+    <td>returns whether or not the set contains the given element</td>
+    <td><code>set.contains(400)</code> is false</td>
+  </tr>
+  <tr>
+    <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#size--" target="_blank">size</a>()</code></td>
+    <td>returns the number of elements in the set</td>
+    <td><code>set.size() </code>is 3</td>
+  </tr>
+  <tr>
+    <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#clear--" target="_blank">clear</a>()</code></td>
+    <td>removes all elements from the set</td>
+    <td><code>set.clear();<br />
+    set</code> is now empty with a <code>.size()</code> of 0 </td>
+  </tr>
+  <tr>
+    <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#remove-java.lang.Object-" target="_blank">remove</a>(object)</code></td>
+    <td>removes the given object from the set, provided it exists</td>
+    <td><code>set.remove(101);<br />
+      set</code> is now <code>[202, 303]</code><code> </code></td>
+  </tr>
+  <tr>
+    <td><code>Iterable</code></td>
+    <td> a set is <code>Iterable</code>, allowing access to each item one at a time</td>
+    <td><pre>for (Integer i : set) {
+    // process each item in turn 
+} </pre></td>
+  </tr>
+</table>
+<p><a name="hashmap"></a></p>
+<h4><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">HashMap</a></h4>
+<p>A map is a collection that works as a lookup table. The collection is kept as pairs of keys and their values. Like <code>ArrayList</code>s, the <code>&lt; &gt;</code> notation tells the type of object used as keys and the type used as values. For example, suppose we want to keep a collection of names with ID numbers. We can create a <code>HashMap</code> like this:</p>
+<ul>
+  <li><code>HashMap&lt;String, Integer&gt; map = new HashMap&lt;String, Integer&gt;();</code> creates an empty collection</li>
+  </ul>
+<p>For the following examples, assume the map variable has two entries: </p>
+<ul>
+  <li>&quot;Robert&quot;  maps to 101</li>
+  <li>&quot;Drew&quot; maps to 252</li>
+</ul>
+<table border=2 cellspacing=5 width="98%">
+  <tr>
+  <th>Method Name
+  <th>Description
+  <th>Example</th>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#containsKey-java.lang.Object-" target="_blank">containsKey</a>(object)</code></td>
+  <td>returns whether or not the map has an entry with a key that equals the given object</td>
+  <td><code>map.containsKey(&quot;Robert&quot;) </code>is true</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#get-java.lang.Object-" target="_blank">get</a>(object)</code></td>
+  <td>returns the value associated with the given key, or null if the key doesn't exist</td>
+  <td><code>map.get(&quot;Robert&quot;) </code>is 101</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#put-K-V-" target="_blank">put</a>(key, value)</code></td>
+  <td>adds a new entry to the map with the given key and value</td>
+  <td><code>map.put(&quot;Susan&quot;, 400);<br />
+    map</code> now contains 3 entries </td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#size--" target="_blank">size</a>()</code></td>
+  <td>returns the number of entries in the map</td>
+  <td><code>map.size() </code>is 2</td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#clear--" target="_blank">clear</a>()</code></td>
+  <td>removes all the entries from the map</td>
+  <td><code>map.clear();<br />
+    map</code> is now empty with a <code>.size()</code> of 0 <code>    </code></td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#remove-java.lang.Object-" target="_blank">remove</a>(object)</code></td>
+  <td>removes the entry with the given key from the map, if it is present</td>
+  <td><code>map.remove(&quot;Robert&quot;);<br />
+    map</code> now contains 1 entry <code>    </code></td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#keySet--" target="_blank">keySet</a>()</code></td>
+  <td>returns a set of all the keys in the map</td>
+  <td><pre>for (String s : map.keySet()) {
+    // process each key in turn 
+} </pre></td>
+</tr>
+<tr>
+  <td><code>.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html#values--" target="_blank">values</a>()</code></td>
+  <td>returns a collection of all the values in the map</td>
+  <td><pre>for (Integer v : map.values()) {
+    // process each value in turn 
+} </pre></td>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<div class="toc">
+<p><a href="http://www.dukelearntoprogram.com/course5/javadoc/index.html?course=5">Complete Documentation</a></p>
+<p>Course Specific Classes</p>
+  <ul>
+    <li><a href="index.html#fileresource">FileResource</a></li>
+    <li><a href="index.html#urlresource">URLResource</a></li>
+    <li><a href="index.html#directoryresource">DirectoryResource</a></li>
+  </ul>
+<p>Apache Commons CSV Classes</p>
+<ul>
+  <li><a href="index.html#csvrecord">CSVRecord</a></li>
+  <li><a href="index.html#csvparser">CSVParser</a></li>
+</ul>
+<p>Standard Java Classes</p>
+  <ul>
+    <li><a href="index.html#string">String</a></li>
+    <li><a href="index.html#stringbuilder">StringBuilder</a></li>
+    </ul>
+  <p>Standard Java Collections</p>
+  <ul>
+    <li><a href="index.html#array">Array</a></li>
+    <li><a href="index.html#arraylist">ArrayList</a></li>
+    <li><a href="index.html#hashset">HashSet</a></li>
+    <li><a href="index.html#hashmap">HashMap</a></li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer">
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/4.0/88x31.png" /></a><br />
+Material accessible from this webpage developed by the instructors at Duke University is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</p>
+
+<!-- Apache license 
+<a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html"><img alt="Apache License" style="border-width:0" src="http://www.apache.org/img/asf_logo.png" width="120" height="31"></a><br />The code for this work is licensed under a <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License Version 2.0</a>.
+-->
+</div>
+
+<!-- WhichBrowser -->
+<script>
+function waitForWhichBrowser(cb) {
+    var callback = cb;
+    function wait() {
+        if (typeof WhichBrowser == 'undefined') 
+            window.setTimeout(wait, 100)
+        else 
+            callback();
+    }
+    wait();
+}
+waitForWhichBrowser(function() {
+    var o = document.createElement('div');
+	o.id = 'warning';
+    try {
+        Browsers = new WhichBrowser({ useFeatures: true, detectCamouflage: true });
+        if (Browsers.isBrowser('Safari', '>', '0')) {
+            o.innerHTML = 'Unfortunately, some features of our JavaScript programming environment are not compatible with the browser you are using. This <a href="../common/saving.php">link</a> explains an alernate way to save your work.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+        else if (Browsers.isBrowser('Internet Explorer', '>', '0') || Browsers.isBrowser('Edge', '>', '0')) {
+            o.innerHTML = 'Unfortunately, our JavaScript programming environment is not compatible with any version of Microsoft\'s Internet Explorer/Edge browser. We suggest you use the latest version of either <a href="https://www.mozilla.org/download">Firefox</a> or <a href="https://www.google.com/chrome/browser/index.html">Chrome</a> instead.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+        }
+		else if (! Boolean(document.createElement('canvas').getContext)) {
+			o.innerHTML = 'Unfortunately, you are using an older version of your browser that is not compatible with our JavaScript programming environment. We suggest you download and install the latest version of your of these browser before continuing.';
+			document.body.insertBefore(o, document.getElementsByClassName('content')[0]);
+		}
+    } catch (e) {
+        console.log('WhichBrowser error: ' + e);
+    }
+});
+</script>
+
+<!-- Google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66891748-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

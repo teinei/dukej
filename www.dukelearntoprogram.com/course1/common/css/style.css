@@ -1,0 +1,361 @@
+/*
+I care about:
+small font for text
+max width
+font/size for pre/code etc.
+
+Could have NO max width specs, just apply to p and li
+
+scheme for table.run to look ok, get wide
+
+scheme for slide table
+scheme for regular data tables (rare)
+
+hmm: maybe just make table classes, don't mess with default
+
+goal: move styling to .css, not in style= in source
+
+output just needs to work reasonably
+*/
+h1 {
+    text-align: center;
+	color: #001A57;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #001A57;
+}
+
+/* apparently body and td are separate! */
+body {
+    font-size: small;
+    font-family: verdana, arial,  helvetica, sans-serif;
+    background-color: #001A57;
+}
+
+/*
+ If max-width is put in body, cannot make table wide. Therefore
+ limit p/li individually + have p.run for the table
+*/
+p, li { 
+    /* max-width:650px; */
+}  /* 2014: wider is nice, but lowers paragraph readability */
+/* p.run { max-width:1200px; }  no longer used with run-css style */
+/* none vs. 1200px here. Wraps the code table, makes print-wide work. */
+/* p.run is the class around the code/output table*/
+
+/*table.run { max-width:none; }  */ /* 2014 add ... doesn't help */
+/* struggled to get chrome to allow the output area to be wide.
+Firefox seems to just get it right. */
+
+div.toc {
+    width: auto;
+	z-index: 0;
+    padding: 5px; 
+	position: fixed;
+    background-color:#c0c0c0;
+}
+div.section {
+    width: 74%;
+	z-index: 1;
+	float: right;
+	position: relative;
+    padding: 10px; 
+    text-align: justify;
+    background-color: #e0e0e0;
+}
+
+div.content {
+    width: 92%;
+    margin: auto;
+    margin-top : 2ex;
+    margin-bottom : 2ex;
+    text-align: justify;
+	overflow: hidden;
+    padding: 0.1ex 2ex 2ex 2ex;
+    background-color: #e0e0e0;
+}
+
+#warning {
+	width: 50%;
+	padding: 4px;
+	margin: auto;
+    background-color: #FFD700;
+    color: #DC143C;
+}
+
+/* header contents */
+.helper {
+    display: inline-block;
+    height: 90%;
+    vertical-align: middle;
+}
+
+.footer {
+    border: 2px solid #001A57;
+	background-color: lightsteelblue;
+	text-align: center;
+	height: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.titlebar {
+    border: 2px solid #001A57;
+	background-color: lightsteelblue;
+	height: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#dukeLogo {
+    float: left;
+    height: 80px;
+    vertical-align: middle;
+}
+#courseraLogo {
+    float: right;
+    height: 80px;
+    vertical-align: middle;
+}
+
+
+div.navbar a {
+	color: lightsteelblue;
+}
+div.navbar a:hover {
+    color: lightsteelblue;
+}
+div.navbar a:follow {
+    color: lightsteelblue;
+}
+
+
+div.lessons { 
+    padding: 8px;
+	margin: auto;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #e0e0e0;
+}
+
+/* problem statement */
+#problem {
+    background-color: #B0C4DE;
+    color: #001A57;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+
+/* helps wide output, err messages */
+div.runparent { 
+    width: 98%;
+    margin: auto;
+}
+
+/* left div with ta-code */
+div.runcode-left { 
+    float: left;
+    padding-right: 10px;
+    width: 60%;
+    height: 460px;
+}
+div.runcode-right { 
+    float: left;
+    width: 37%;
+    padding-right: 10px;
+    height: 460px;
+}
+
+/* output div */
+div.runout { 
+    border: 1px solid #000;
+    padding: 10px;
+    height: 310px;
+    width: 100%;
+    float: left;
+    overflow: auto;
+    background-color: #FFF;
+    border-radius: 25px;
+}
+/* debug div */
+div.debugout { 
+    border: 1px solid #000;
+    padding: 5px;
+    height: 20px;
+    width: 100%;
+    float: left;
+    overflow: auto;
+    background-color: #FFF;
+    border-radius: 25px;
+}
+
+/* ace editor */
+#editor {
+    border: 1px solid #001A57;
+    border-radius: 25px;
+    width: 100%;
+    height: 330px;
+    overflow: auto;
+}
+#resizable { 
+    width: 100%;
+    height: 315px;
+    border: 0px;
+}
+
+
+.action {
+    width: 50%;
+    height: 25px;
+	margin: auto;
+    background-color: #18336F;
+    color: white;
+    border: 1px solid black;
+    font-size: medium;
+    border-radius: 25px;
+}
+.action a {
+    color: white;
+	text-decoration: none;
+}
+.action a:hover {
+    color: yellow;
+}
+.action:hover {
+    background-color: #001A57;
+    color: yellow;
+}
+.action-outer {
+	text-align: center;
+	padding-top: 8px;
+}
+.action2 {
+    height: 30px;
+    background-color: transparent;
+    color: #18336F;
+    border: none;
+    font-size: small;
+}
+
+.action2:hover {
+    color: #001A57;
+    text-decoration: underline;
+}
+
+.runHolder {
+    width: 50%;
+    margins: auto;
+    height: 46px;
+}
+.ioHolder {
+    width: 100%;
+	text-align: center;
+    margins: auto;
+}
+
+
+/* uploaded data */
+.thumb {
+    height: 45px;
+    margin: 0px 5px 5 0;
+}
+
+#preview-row {
+    height: 70px;
+    padding: 12px;
+    border: 1px solid #001A57;
+    background-color: #B0C4DE;
+    overflow: auto;
+    border-radius: 25px;
+}
+#preview-row #list {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 8px;
+    font-size: small;
+}
+
+#PopUp {
+	padding: 4px;
+	font-size: 10px;
+	width: 150px;
+    background-color: #B0C4DE;
+	border: solid black 1px;
+}
+ 
+.problist {
+}
+.problist img {
+	float: left;
+    height: 32px;
+}
+.problist ul {
+    list-style-type: none;
+}
+.problist p {
+	display: inline-block;
+    vertical-align: bottom;
+    text-indent: 10px;
+}
+.problist #list {
+    clear: both;
+}
+.problistH li {
+    display: inline;
+	margin: 10px;
+}
+.problistH #list {
+    display: inline-block;
+	margin-right: 16px;
+    vertical-align: top;
+    text-align: center;
+}
+
+
+
+/* courier all around, spec "medium" size just for pre/tacode */
+code, pre, textarea.tacode, div.runout {
+    font-family: courier, monospace;
+}
+
+textarea.tacode {
+    /* height: auto !important;  */ /* edx lms forces this to 35px, which is stupid */
+    /* height: reset !important; */
+    /* min-height: 4em; */
+    padding-bottom: 10px;  /* fend off the Run button a little */
+    resize: both !important;  /* yes, I want the user to be able to resize vs. edx setting*/
+}
+/* select medium size in the regular html -- should be overridden to small for the edx runtime */
+pre, textarea.tacode, div.runout {
+    font-size: medium;
+}
+/* pre/code inside li .. use inherited size */
+li pre, li code {
+    font-size:inherit;
+}
+
+
+/* green slide */
+ul.slide { 
+    max-width:650px;
+    font-size:20px;
+    border:5px solid darkgreen;
+}
+
+
+/* table class=tab to actually tabulate data */
+table.tab, table.tab tr, table.tab td, table.tab th {
+    border: 2px solid black;
+    border-collapse:collapse;
+    min-width: 100px;
+    font-size: medium;
+}
