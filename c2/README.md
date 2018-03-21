@@ -59,6 +59,9 @@ created by Duke University
 ### Week 3
 > Module 3 CSV Files and Basic Statistics in Java
 
+* 310 Module Learning Outcomes
+* 211 CSV Data: Comma Separated Values
+
 ### Week 4 
 > Module 4 MiniProject: Baby Names
 
