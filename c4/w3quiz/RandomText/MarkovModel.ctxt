@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=order
+comment0.target=MarkovModel(int)
+comment1.params=seed
+comment1.target=void\ setRandom(int)
+comment2.params=s
+comment2.target=void\ setTraining(java.lang.String)
+comment3.params=key\ pos
+comment3.target=boolean\ matchKey(java.lang.String,\ int)
+comment3.text=\n\ Helper\ function\ for\ matching\ key\ and\ a\ substring\ <pos,\ order);\n\ @param\ key\n\ @param\ pos\n\ @return\n
+comment4.params=pos
+comment4.target=java.lang.String\ getFollowingLetter(int)
+comment4.text=\nGet\ the\ letter\ following\ key\ starting\ on\ pos\:\n\ substring(pos+order,\ pos+order+1)\n\ @param\ pos\n\ @return\n
+comment5.params=key
+comment5.target=java.util.ArrayList\ getFollows(java.lang.String)
+comment6.params=numChars
+comment6.target=java.lang.String\ getRandomText(int)
+numComments=7
