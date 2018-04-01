@@ -70,13 +70,13 @@ public class Tester
         // Test the method countUniqueIPsInRange
         int low = 200;
         int high = 299;
-        low=400;
-        high=499;
+        //low=400;
+        //high=499;
         int num = analyzer.countUniqueIPsInRange(low, high);
         System.out.println("Number of unique IPs in range " + low + "-" + high + ": " + num);
         
-        low = 300;
-        high = 399;
+        low = 400;
+        high = 499;
         num = analyzer.countUniqueIPsInRange(low, high);
         System.out.println("Number of unique IPs in range " + low + "-" + high + ": " + num);
     }
@@ -154,6 +154,10 @@ public class Tester
         String date = "Sep 29";
         date="Sep 30";
         ArrayList<String> ips = analyzer.iPsWithMostVisitsOnDay(dateMap, date);
-        System.out.println(ips);
+        System.out.println(date+ips);
+        
+        date="Sep 29";
+        ips = analyzer.iPsWithMostVisitsOnDay(dateMap, date);
+        System.out.println(date+ips);
     }
 }

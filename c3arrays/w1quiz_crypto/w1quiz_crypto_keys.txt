@@ -1,0 +1,35 @@
+
+
+
+Rpc ndj xbpvxct axut LXIWDJI iwt xcitgcti PCS rdbejitgh xc ndjg edrzti?
+
+Xii twp duvodvz gqam EDBCWPB bcm qibzzimo VVY xwhxpbzzn dv gjcm kwxszb?
+
+"if (i % 2 == 0)  {                  
+     newChar = shiftedAlphabet1.charAt(idx);            
+}            
+else {                 
+     newChar = shiftedAlphabet2.charAt(idx);            
+}"
+
+4
+
+7
+
+The original name of Java was Oak.
+
+The name of the Java Mascot is Duke. Woeoeee!
+
+Duke Computer Science Department Overview
+
+17, 4
+
+As key1 and key2 of type int, which are parameters to the constructor.
+
+private
+
+It should not have a return type
+
+blueblueblue is blue repeated
+
+A compile error occurs when compiling this class, because mystery is private and cannot be called by the TestSimple class.
