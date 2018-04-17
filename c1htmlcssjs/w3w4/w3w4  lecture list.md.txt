@@ -1,0 +1,35 @@
+
+-
+### Week 3 JavaScript for Web Pages
+
+#### w3s1 Event-Driven Programming
+- w3s1a1 Introduction
+- w3s1a2 Buttons with Divs
+- w3s1a3 Changing Pages Interactively
+- w3s1a4 Using HTML5
+- w3s1a5 Inputs and Events
+
+#### w3s2 Green Screen Web Page
+- w3s2b1 Upload and Display an Image
+- w2s2b2 Convert Image to Grayscale
+- w3s2b3 Moving to CodePen
+
+-
+===
+
+### Week 4 MiniProject: Image Filters on the Web
+
+#### w4s1 Image Filters on the Web
+- w4s1a1 Introduction
+
+-
+===
+<br>
+*Optional Honors Content*
+### w4s2 Hiding Data in Images with Steganography
+- w4s2b1 Steganography Part I
+- w4s2b2 Steganography Part II
+- w2s2b3 Steganography Part III
+- w2s2b4 Steganography Coding Example
+
+-

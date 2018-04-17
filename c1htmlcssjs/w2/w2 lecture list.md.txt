@@ -1,0 +1,27 @@
+
+---
+### Week 2 Algorithms and Programming Concepts
+
+#### w2m1 Computational Thinking
+- w2m1a1 Introduction
+- w2m1a2 Everything Is a Number
+- w2m1a3 How Is That a Number?
+- w2m1a4 Developing an Algorithm
+- w2m1a5 A Seven Step Approach to Solving Programming Problems
+
+#### w2m2 Programming Fundamentals with JavaScript
+- w2m2b1 Variables
+- w2m2b2 Methods
+- w2m2b3 Functions
+- w2m2b4 Types
+- w2m2b5 DukeLearnToProgram Environment
+- w2m2b6 For Loops
+- w2m2b7 Conditional Execution
+
+#### w2m3c Implementing the Green Screen Algorithm
+- w2m3c1 Translating to Code
+- w2m3c2 Thinking Critically about Your Program
+- w2m3c3 Finding Bugs in Code
+
+---
+

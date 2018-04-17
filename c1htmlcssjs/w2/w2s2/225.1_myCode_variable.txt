@@ -1,0 +1,15 @@
+// write your code here
+var x = 3;
+var y = 4;
+var z = x + 2*y;
+print(x);
+print(y);
+print(z);
+print("\n");
+
+//create and print image
+var image1 = new SimpleImage("chapel.png");
+print(image1.getWidth());
+print(image1.getHeight());
+print(image1.getPixel(7,7));
+print(image1.getRed(7,7));

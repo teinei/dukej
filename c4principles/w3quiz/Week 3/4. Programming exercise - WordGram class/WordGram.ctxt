@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=source\ start\ size
+comment0.target=WordGram(java.lang.String[],\ int,\ int)
+comment1.params=index
+comment1.target=java.lang.String\ wordAt(int)
+comment2.params=
+comment2.target=int\ length()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\n\ Prints\ out\ a\ WordGram,\ showing\ all\ the\ words\ in\ the\ WordGram\ on\ one\ line\ separated\ by\ spaces.\n
+comment4.params=o
+comment4.target=boolean\ equals(java.lang.Object)
+comment5.params=word
+comment5.target=WordGram\ shiftAdd(java.lang.String)
+comment6.params=
+comment6.target=int\ hashCode()
+comment6.text=\n\ \ Returns\ an\ integer\ that\ is\ a\ hash\ code\ that\ represents\ the\ WordGram.\n
+numComments=7

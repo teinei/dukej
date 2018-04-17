@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=num
+comment0.target=MarkovModel(int)
+comment0.text=\n\ Takes\ integer\ specifying\ the\ number\ of\ characters\ to\ use\ to\ predict\ the\ next\ character.\n
+comment1.params=seed
+comment1.target=void\ setRandom(int)
+comment2.params=s
+comment2.target=void\ setTraining(java.lang.String)
+comment3.params=numChars
+comment3.target=java.lang.String\ getRandomText(int)
+comment3.text=\n\ Predicts\ the\ next\ character\ by\ finding\ all\ the\ characters\ that\ follow\ a\ substring\ of\ keyLength\n\ characters\ in\ the\ training\ text,\ and\ then\ randomly\ picking\ one\ of\ them\ as\ the\ next\ character.\n
+comment4.params=key
+comment4.target=java.util.ArrayList\ getFollows(java.lang.String)
+comment4.text=\n\ Finds\ all\ the\ characters\ from\ the\ private\ variable\ myText\ in\ MarkovOne\ that\ \n\ follow\ key\ and\ puts\ all\ these\ characters\ into\ an\ ArrayList.\n\ @returns\ the\ ArrayList\n
+numComments=5

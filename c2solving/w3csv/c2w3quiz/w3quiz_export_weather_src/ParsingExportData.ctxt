@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=ParsingExportData
+comment1.params=parser\ exportItem
+comment1.target=void\ numberOfExporters(org.apache.commons.csv.CSVParser,\ java.lang.String)
+comment1.text=The\ method\ prints\ the\ number\ of\ countries\ that\ export\ exportItem
+comment2.params=parser\ exportItem1\ exportItem2
+comment2.target=void\ listExportersTwoProducts(org.apache.commons.csv.CSVParser,\ java.lang.String,\ java.lang.String)
+comment2.text=The\ method\ prints\ the\ names\ of\ all\ the\ countries\ that\ have\ both\ exportItem1\ and\ exportItem2\ as\ export\ items.
+comment3.params=parser\ country
+comment3.target=void\ countryInfo(org.apache.commons.csv.CSVParser,\ java.lang.String)
+comment3.text=This\ method\ prints\ a\ string\ of\ information\ about\ the\ country\ or\ prints\ \u0093NOT\ FOUND\u0094\ if\ there\ is\ no\ information\ about\ the\ country
+comment4.params=parser\ amount
+comment4.target=void\ bigExporters(org.apache.commons.csv.CSVParser,\ java.lang.String)
+comment4.text=This\ method\ prints\ the\ names\ of\ countries\ and\ their\ Value\ amount\ for\ all\ countries\ whose\ Value\ (dollars)\ string\ is\ longer\ than\ the\ amount\ string.
+comment5.params=
+comment5.target=void\ tester()
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7
